@@ -37,16 +37,16 @@ function WhoweareSection() {
       <div className="container conwh">
 
         <div>
-          <div className="row whotextRow">
-            <div className="col-4" data-aos="fade-up" data-aos-delay="100"><hr /></div>
-            <div className="col-4" data-aos="fade-up" data-aos-delay="100"><p id='whoweareText'>Who we are</p></div>
-            <div className="col-4" data-aos="fade-up" data-aos-delay="100"><hr /></div>
+          <div className="row whotextRow" data-aos="fade-down" data-aos-duration="1000" data-aos-delay="100">
+            <div className="col-4"><hr /></div>
+            <div className="col-4"><p id='whoweareText'>Who we are</p></div>
+            <div className="col-4"><hr /></div>
           </div>
 
           <ScrollTrigger onEnter={() => setCounterOn(true)} onExit={() => setCounterOn(false)}>
             <div className="row">
-              <div className="col-md-5 techcontainer" data-aos="fade-up" data-aos-delay="100">
-                <div className='row'>
+              <div className="col-md-5 techcontainer">
+                <div className='row' data-aos="fade-down" data-aos-duration="1000" data-aos-delay="100">
                   <div className='col welogos' onClick={() => setDisShow(true)}>
                     <div className='row'><img src={Dis} className='techimage' /></div>
                     <div className='row'><p className='techText'>Distribution</p></div>
@@ -57,7 +57,7 @@ function WhoweareSection() {
                   </div>
                 </div>
 
-                <div className='row'>
+                <div className='row' data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
                   <div className='col welogos' onClick={() => setTraShow(true)}>
                     <div className='row'><img src={Tra} className='techimage' /></div>
                     <div className='row'><p className='techText'>Training</p></div>
@@ -70,7 +70,7 @@ function WhoweareSection() {
               </div>
 
 
-              <div className="col-md-6 d-flex flex-column justify-content-center" data-aos="fade-up" data-aos-delay="200">
+              <div className="col-md-6 d-flex flex-column justify-content-center" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="100">
 
                 <div className="row" id='whText'>
                   <p >Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literatum passage,literature, discovered the undoubtable source.</p>

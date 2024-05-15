@@ -61,7 +61,7 @@ hr {
 }
 
 .techcontainer {
-    padding-bottom: 5%;
+    padding: 6%;
 }
 
 .techimage {
@@ -170,13 +170,13 @@ hr {
 }
 
 @media (max-width: 1440px) {
-    .icon{
+    .icon {
         width: 52px;
     }
 
 }
 
-.icon{
+.icon {
     width: 55px;
 }
 
@@ -207,10 +207,10 @@ hr {
     text-align: center;
 }
 
-.techRow{
+.techRow {
     text-align: center;
 }
 
-.whotextRow{
+.whotextRow {
     margin-bottom: 5%;
 }
