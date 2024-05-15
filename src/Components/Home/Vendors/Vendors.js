@@ -33,17 +33,17 @@ const Vendors = () => {
     <section className='vendors'>
       <div className='container'>
         {/* Vendors Text */}
-        <div className="row gy-3" data-aos="fade-down" data-aos-duration="1000" data-aos-delay="100">
-          <div className="col-4"><hr /></div>
-          <div className="col-4"><p id='ourVendorsText'>Our Vendors</p></div>
-          <div className="col-4"><hr /></div>
+        <div className="row gy-3">
+          <div className="col-4" data-aos="fade-up" data-aos-delay="100"><hr /></div>
+          <div className="col-4" data-aos="fade-up" data-aos-delay="100"><p id='ourVendorsText'>Our Vendors</p></div>
+          <div className="col-4" data-aos="fade-up" data-aos-delay="100"><hr /></div>
         </div>
 
-        <div className='row vendorText' data-aos="fade-down" data-aos-duration="1000" data-aos-delay="100">
+        <div className='row vendorText'>
           <p>Embark on technological Excellence with our Trusted <br />Network of Vendors.</p>
         </div>
 
-        <div className='row' data-aos="fade-down" data-aos-duration="1000" data-aos-delay="100">
+        <div className='row'>
           <div className='col-lg-1'></div>
           <div className='col-lg-10'>
             <Swiper
