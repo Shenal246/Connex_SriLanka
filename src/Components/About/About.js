@@ -7,6 +7,7 @@ import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import 'animate.css';
 import card1 from '../../images/map/SL-070722-51460-10 [Converted].png';
+import '../Home/Vendors/Vendors.css';
 
 function SampleNextArrow(props) {
     const { className, style, onClick } = props;
@@ -76,10 +77,10 @@ const About = () => {
                 <div class="container">
                     <div className='center' data-aos="fade-up" data-aos-delay="200">
                         <div class="row">
-                            <div class="col-sm" >
+                            <div class="col-sm" data-aos="fade-down" data-aos-duration="1000" data-aos-delay="200" >
                                 <img src={headlogo} className='headimg'></img>
                             </div>
-                            <div class="col-sm">
+                            <div class="col-sm" data-aos="fade-down" data-aos-duration="1000" data-aos-delay="200">
                                 <div className='story'>
                                     <h1>Our Story</h1>
                                     <p>Over a decade in the industry, we've empowered over 100 partners with products from 60+ vendors, serving countless successful customers.</p>
@@ -87,13 +88,13 @@ const About = () => {
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-sm ">
+                            <div class="col-sm " data-aos="fade-down" data-aos-duration="1000" data-aos-delay="200">
                                 <div className='story bdround'>
                                     <h1>Our Vision</h1>
                                     <p>Our vision is to be the most innovative distributor of it products in the country by developing and working closely with our valued channels through effective marketing and proficient support, thus enabling our partners and the company to grow together.</p>
                                 </div>
                             </div>
-                            <div class="col-sm">
+                            <div class="col-sm" data-aos="fade-down" data-aos-duration="1000" data-aos-delay="200">
                                 <div className='story bdround'>
                                     <h1>Our Mission</h1>
                                     <p>Our vision is to be the most innovative distributor of it products in the country by developing and working closely with our valued channels through effective marketing and proficient support, thus enabling our partners and the company to grow together.</p>
@@ -110,7 +111,7 @@ const About = () => {
 
 
 
-                <div className='slider'>
+                <div className='slider' data-aos="fade-down" data-aos-duration="1000" data-aos-delay="200">
                     <Slider {...settings}>
 
                         {data.map((d) => (<>
@@ -158,8 +159,16 @@ const About = () => {
                     
 
                 </div> */}
-
-            <div className='row imageMap'>
+                <div className='spc'></div>
+        <div className="row gy-3" data-aos="fade-down" data-aos-duration="1000" data-aos-delay="200">
+            
+                <div className="col-4"><hr /></div>
+                 <div className="col-4"><p id='ourVendorsText'>Countries</p></div>
+                <div className="col-4"><hr /></div>
+            
+         
+        </div >
+            <div className='row imageMap'data-aos="fade-down" data-aos-duration="1000" data-aos-delay="200">
                 <div className="row gy-3 text">
                     <div className="col-3" ></div>
                     <div className="col-6" > <img src={card1} className="map rounded-5 opacity-75 " alt="ConnexIT Logo"  /></div>

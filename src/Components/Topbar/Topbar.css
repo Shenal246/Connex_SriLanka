@@ -45,3 +45,12 @@
   #topbar .social-links a:hover {
     background-color: rgb(35, 116, 27);
   }
+  @media (max-width: 599px) {
+    .nmb{
+      font-size: 10px;
+    }
+    .eml{
+      font-size: 12px;
+    }
+ 
+  }

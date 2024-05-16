@@ -8,12 +8,12 @@
     #t1{
       background-color: #10055b25;
       padding: 2%;
-      border-bottom: 3px solid green;
+      border-bottom: 1px solid green;
     }
     #t2{
       background-color: #21025a54;
       padding: 2%;
-      border-bottom: 3px solid green;
+      border-bottom: 1px solid green;
     }
     .headimg{
         width: 70%;
@@ -33,6 +33,9 @@
         border-left: 2px solid  #4EC3F5; /* Set left border */
         border-right: 2px solid  #4EC3F5;
         border-radius: 50px;
+    }
+    .spc{
+      height: 50px;
     }
     .slider{
       margin: auto;
@@ -137,18 +140,90 @@
       button{
         width: 100px;
       }
+      .map{
+        width: 100%;
+        height:auto;
+        
+      }
+      .imageMap{
+       
+        margin-bottom: 40px;
+      }
     }
 @media (max-width: 599px) {
 
-
+.headimg{
+  width: 80%;
+        margin-top: 5%;
+        border-radius: 50px;
+        align-items: center;
+        border: 3px solid #4EC3F5;
+        margin-left: 10%;
 }
-
-.map{
-  width: 100%;
-  height:auto;
+.bdround{
+  border-left: 2px solid  #4EC3F5; /* Set left border */
+  border-right: 2px solid  #4EC3F5;
+  border-radius: 50px;
+}
+.story{
+  width: 90%;
+  color: white;
+  margin-top: 15%;
+  text-align: justify;
+  padding: 4%;
+  text-align: center;
+  margin-left: 5%;
   
 }
-.imageMap{
- 
-  margin-bottom: 40px;
+.slider{
+  margin: auto;
+  width: 80%;
+  height: 100%;
+  background-color: #f9f9f921;
+  align-items: center;
+  padding: 2%;
+  border-radius: 50px;
+  margin-top: 5%;
+  margin-bottom: 5%;
+
+
 }
+.slider .sl img{
+  width: 80%;
+  margin-left: 10%;
+  margin-top: 10%;
+  border-radius: 40px;
+  border: 3px solid #4EC3F5;
+
+}
+.slider .sl h3{
+  text-align: center;
+  margin-top: 10%;
+  font-size: 15px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.slider .sl h4{
+  text-align: center;
+  margin-top: 5%;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-style: italic;
+  color: rgb(4, 137, 8);
+  font-size: 12px;
+}
+.slider .sl p{
+  text-align: center;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-style: italic;
+  color: rgb(4, 137, 8);
+  font-size: 10px;
+}
+.map{
+  width: 365px;
+  margin-left: -90px;
+  margin-bottom: 50PX;
+ 
+  
+}
+
+}
+
