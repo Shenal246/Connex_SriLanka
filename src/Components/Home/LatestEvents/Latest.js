@@ -16,8 +16,8 @@ const Latest = () => {
                     <div className="col-4"><hr /></div>
                 </div>
 
-                <div className="row backgrnd" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="50">
-                    <div className="col-md-6">
+                <div className="row backgrnd" >
+                    <div className="col-md-6" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="50">
                         {/* first image of the first column */}
                         <div className="mb-2">
                             <Card className='cardContainer1'>
@@ -30,7 +30,7 @@ const Latest = () => {
                     </div>
 
                     {/* First image of the Second column */}
-                    <div className="col-md-5">
+                    <div className="col-md-5" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="50">
                         <div className='row'>
                             <div className="mb-2">
                                 <Card className='cardContainer2'>
@@ -71,7 +71,7 @@ const Latest = () => {
                     </div>
 
                     {/* See more button */}
-                    <div className="col-md-1">
+                    <div className="col-md-1" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="50">
                         <div className="navigation">
                             <Button variant="" className='iconsss' style={{ backgroundColor: '#01066B' }}>
                                 <BsArrowRight size={30} />

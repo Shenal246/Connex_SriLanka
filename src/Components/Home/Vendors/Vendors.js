@@ -4,7 +4,7 @@ import 'swiper/css';
 import 'swiper/css/effect-coverflow';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
-import { EffectCoverflow, Pagination, Navigation, Autoplay } from 'swiper/modules';
+import { EffectCoverflow, Autoplay } from 'swiper/modules';
 import 'swiper/swiper-bundle.css'; // Import Swiper bundle CSS
 
 import './Vendors.css';
@@ -62,8 +62,7 @@ const Vendors = () => {
                 depth: 100,
                 modifier: 2.5,
               }}
-              pagination={true}
-              modules={[EffectCoverflow, Pagination, Navigation, Autoplay]}
+              modules={[EffectCoverflow, Autoplay]}
               className="mySwiper"
             >
               {imagePaths.map((path, index) => (

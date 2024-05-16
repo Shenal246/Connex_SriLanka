@@ -6,7 +6,6 @@ import Footer from './Components/Footer/Footer';
 import { useEffect } from 'react';
 import AOS from 'aos';
 
-
 function App() {
 
   AOS.init();

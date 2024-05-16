@@ -6,7 +6,7 @@
     width: 100%;
     min-height: 70vh;
     position: relative;
-    /* padding: 120px 0 60px 0; */
+    padding: 70px;
     padding-bottom: 30px;
     display: flex;
     align-items: center;
@@ -118,6 +118,10 @@ h3{
     }
     .settop{
         margin-top: -20%;
+    }
+
+    .hero{
+        padding-top: 10px !important;
     }
 }
 
