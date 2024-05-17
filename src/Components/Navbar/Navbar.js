@@ -6,6 +6,23 @@ import About from '../About/About';
 import Home from '../Home/Home';
 import Events from '../Events&News/Events';
 import ContactUs from '../ContactUs/Contact';
+import Solutions from '../Solutions/Solutions';
+
+import sin from '../../images/FlagIcon/singapore.png';
+import aus from '../../images/FlagIcon/australia.png';
+import ban from '../../images/FlagIcon/bangladesh.png';
+import bru from '../../images/FlagIcon/brunei.png';
+import cam from '../../images/FlagIcon/cambodia.png';
+import wor from '../../images/FlagIcon/world.png';
+import ind from '../../images/FlagIcon/india.png';
+import laos from '../../images/FlagIcon/laos.png';
+import mld from '../../images/FlagIcon/maldives.png';
+import myn from '../../images/FlagIcon/myanmar.png';
+import mrt from '../../images/FlagIcon/mauritius.png';
+import sl from '../../images/FlagIcon/sri-lanka.png';
+import tnz from '../../images/FlagIcon/tanzania.png';
+import tld from '../../images/FlagIcon/thailand.png';
+
 
 function Navbar() {
 
@@ -90,17 +107,37 @@ function Navbar() {
               <ul class="no-bullets">
                 <NavLink to="/About" activeClassName='active-link' exact><li><a className="">About Us</a></li></NavLink>
                 <NavLink to="/About" activeClassName='active-link' exact><li><a className="">Products</a></li></NavLink>
-                <NavLink to="/About" activeClassName='active-link' exact><li><a className="">Solutions</a></li></NavLink>
+                <NavLink to="/Solutions" activeClassName='active-link' exact><li><a className="">Solutions</a></li></NavLink>
                 <NavLink to="/Events&News" activeClassName='active-link' exact><li><a className="">Event & News</a></li></NavLink>
                 <NavLink to="/About" activeClassName='active-link' exact><li><a className="">Portal</a></li></NavLink>
-                <NavLink to="/About" activeClassName='active-link' exact><li><a className="">Countries</a></li></NavLink>
-
+                
+                <li className="dropdown countries"><a href="#" className='toggle-dropdown'>
+                  <span className='toggle-dropdown'>Countries&nbsp;<i className="fa-solid fa-globe"></i> </span> <i className="bi bi-chevron-down toggle-dropdown arrow " style={{ fontSize: '1em'}}></i></a>
+                  <ul className='container1'>
+                    <div class="scrollable-menu flagName">
+                      <li><a href="#"><img src={sin} alt=" Flag" className='flag'/> Singapore (HQ)</a></li>
+                      <li><a href="#"><img src={aus} alt=" Flag" className='flag'/> Australia</a></li>
+                      <li><a href="#"><img src={ban} alt=" Flag" className='flag'/> Bangladesh</a></li>
+                      <li><a href="#"><img src={bru} alt=" Flag" className='flag'/>Brunei</a></li>
+                      <li><a href="#"><img src={cam} alt=" Flag" className='flag'/>Cambodia</a></li>
+                      <li><a href="#"><img src={wor} alt=" Flag" className='flag'/>UAE</a></li>
+                      <li><a href="#"><img src={ind} alt=" Flag" className='flag'/>India</a></li>
+                      <li><a href="#"><img src={laos} alt=" Flag" className='flag'/>Laos</a></li>
+                      <li><a href="#"><img src={mld} alt=" Flag" className='flag'/>Maldives</a></li>
+                      <li><a href="#"><img src={myn} alt=" Flag" className='flag'/>Myanmar</a></li>
+                      <li><a href="#"><img src={mrt} alt=" Flag" className='flag'/>Mauritius</a></li>
+                      <li><a href="#"><img src={sl} alt=" Flag" className='flag'/>Sri Lanka</a></li>
+                      <li><a href="#"><img src={tnz} alt=" Flag" className='flag'/>Tanzania</a></li>
+                      <li><a href="#"><img src={tld} alt=" Flag" className='flag'/>Thailand</a></li>
+                    </div>
+                  </ul>
+                </li>
               </ul>
               <i className="mobile-nav-toggle d-xl-none bi bi-list"></i>
             </nav>
-          
+
             <NavLink to="/ContactUs" activeClassName='active-link' className="btn-getstarted" href="">Contact Us</NavLink>
-    
+
           </div>
         </header>
 
@@ -111,8 +148,9 @@ function Navbar() {
           <Route path="/About" exact Component={About}></Route>
           <Route path="/Events&News" exact Component={Events}></Route>
           <Route path="/ContactUs" exact Component={ContactUs}></Route>
-          
-          
+          <Route path="/Solutions" exact Component={Solutions}></Route>
+
+
 
         </Routes>
 

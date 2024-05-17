@@ -1,16 +1,11 @@
 import './Hero.css';
 import Logo from '../../../images/hero.png';
 import React, { useEffect } from 'react';
-import GLightbox from 'glightbox';
-// import GLightbox from '@glightbox/core';
+
 
 function HeroSection() {
 
-  useEffect(() => {
-    GLightbox({
-      selector: '.glightbox' // This selects all elements with class 'glightbox'
-    });
-  }, []);
+  
 
   return (
     <section id="hero" className="section hero">
