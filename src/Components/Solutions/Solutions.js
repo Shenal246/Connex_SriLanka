@@ -8,14 +8,9 @@ import networking from '../../images/pillers/networking.jpg';
 import Perimie from '../../images/pillers/Perimie.jpg';
 import servers from '../../images/pillers/severBackup.jpg';
 import { NavLink } from "react-router-dom";
-import Perimi from "./solutionVendors/Perimia/Perimia";
-import { BrowserRouter as Router, Route, Routes} from "react-router-dom";
-
 
 function Solutions() {
-
   return (
-    <Router>
     <section id='hero' className='hero1'>
       <div className="container text-center">
         <div className='row'>
@@ -27,7 +22,7 @@ function Solutions() {
         </div>
         <div className="row row-cols-2 row-cols-lg-4 g-2 g-lg-3 rowmargin">
           <div className="col">
-            <NavLink to="/Solutions/Peri" activeClassName='active-link' exact>
+            <NavLink to="/Solutions/Peri" activeClassName='active-link'>
               <div className="card crd">
                 <img src={Perimie} className="card-img-top" alt="Perimeter and Internal Security" />
                 <div className="card-body cardSize">
@@ -36,9 +31,8 @@ function Solutions() {
               </div>
             </NavLink>
           </div>
-
           <div className="col">
-            <NavLink to="/About" activeClassName='active-link' exact>
+            <NavLink to="/About" activeClassName='active-link'>
               <div className="card crd">
                 <img src={cyber} className="card-img-top" alt="Cyber Security Governance & Compliance" />
                 <div className="card-body cardSize">
@@ -48,7 +42,7 @@ function Solutions() {
             </NavLink>
           </div>
           <div className="col">
-            <NavLink to="/About" activeClassName='active-link' exact>
+            <NavLink to="/About" activeClassName='active-link'>
               <div className="card crd">
                 <img src={Authitianit} className="card-img-top" alt="Authentication & Identity Management" />
                 <div className="card-body cardSize">
@@ -58,7 +52,7 @@ function Solutions() {
             </NavLink>
           </div>
           <div className="col">
-            <NavLink to="/About" activeClassName='active-link' exact>
+            <NavLink to="/About" activeClassName='active-link'>
               <div className="card crd">
                 <img src={Security} className="card-img-top" alt="Security Management" />
                 <div className="card-body cardSize">
@@ -68,7 +62,7 @@ function Solutions() {
             </NavLink>
           </div>
           <div className="col">
-            <NavLink to="/About" activeClassName='active-link' exact>
+            <NavLink to="/About" activeClassName='active-link'>
               <div className="card crd">
                 <img src={datapoint} className="card-img-top" alt="Endpoint Security" />
                 <div className="card-body cardSize">
@@ -78,7 +72,7 @@ function Solutions() {
             </NavLink>
           </div>
           <div className="col">
-            <NavLink to="/About" activeClassName='active-link' exact>
+            <NavLink to="/About" activeClassName='active-link'>
               <div className="card crd">
                 <img src={networking} className="card-img-top" alt="Networking" />
                 <div className="card-body cardSize">
@@ -88,7 +82,7 @@ function Solutions() {
             </NavLink>
           </div>
           <div className="col">
-            <NavLink to="/About" activeClassName='active-link' exact>
+            <NavLink to="/About" activeClassName='active-link'>
               <div className="card crd">
                 <img src={endpoint} className="card-img-top" alt="Data Center Infrastructure and Infrastructure Monitoring" />
                 <div className="card-body cardSize">
@@ -98,7 +92,7 @@ function Solutions() {
             </NavLink>
           </div>
           <div className="col column">
-            <NavLink to="/About" activeClassName='active-link' exact>
+            <NavLink to="/About" activeClassName='active-link'>
               <div className="card crd">
                 <img src={servers} className="card-img-top" alt="Server Storage & Backup Solutions" />
                 <div className="card-body cardSize">
@@ -112,14 +106,7 @@ function Solutions() {
       
 
     </section>
-    <Routes>
-
-          <Route path="/Solutions/Peri" exact Component={Perimi}></Route>
-
-
-
-        </Routes>
-    </Router>
+    
   );
 }
 
