@@ -1,10 +1,71 @@
 
-.ccc{
-  background-color: aliceblue;
-  height: 200px;
-  /* margin: 3px; */
+
+.hero1 {
+
+  width: 100%;
+  min-height: 70vh;
+  position: relative;
+  padding-top: 35px;
+  display: flex;
+  align-items: center;
+  border-bottom: 2px solid rgba(var(--accent-color-rgb), 0.25);
 }
 
-.column{
-  height: 500px;
+
+.rowmargin{
+  height:  85%;
+  padding-bottom: 5%;
+  padding-top: 3%;
+}
+
+.cardSize{
+  height:78px;
+  background-color: rgba(0, 0, 0, 0.052);
+}
+
+.txts{
+  font-size: large;
+  font: bold;
+  font-weight: 500;
+}
+
+/* 
+.crd {
+  box-shadow:8px 4px 8px rgb(255, 255, 255);
+  transition: box-shadow 0.3s ease-in-out;
+} */
+
+.crd:hover {
+  
+  box-shadow: 7px 8px rgba(36, 34, 34, 0.818);
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+
+
+
+
+#topic {
+  text-align: center;
+  font-size: 40px;
+  color: white;
+  opacity: 0.9;
+}
+
+@media (max-width: 425px) {
+  #topic {
+      font-size: 15px;
+  }
+}
+
+@media (max-width: 375px) {
+  #topic {
+      font-size: 15px;
+  }
+}
+
+@media (max-width: 768px) {
+  #topic {
+      font-size: 21px;
+  }
 }
