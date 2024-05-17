@@ -8,10 +8,14 @@ import networking from '../../images/pillers/networking.jpg';
 import Perimie from '../../images/pillers/Perimie.jpg';
 import servers from '../../images/pillers/severBackup.jpg';
 import { NavLink } from "react-router-dom";
+import Perimi from "./solutionVendors/Perimia/Perimia";
+import { BrowserRouter as Router, Route, Routes} from "react-router-dom";
+
 
 function Solutions() {
 
   return (
+    <Router>
     <section id='hero' className='hero1'>
       <div className="container text-center">
         <div className='row'>
@@ -23,7 +27,7 @@ function Solutions() {
         </div>
         <div className="row row-cols-2 row-cols-lg-4 g-2 g-lg-3 rowmargin">
           <div className="col">
-            <NavLink to="/About" activeClassName='active-link' exact>
+            <NavLink to="/Solutions/Peri" activeClassName='active-link' exact>
               <div className="card crd">
                 <img src={Perimie} className="card-img-top" alt="Perimeter and Internal Security" />
                 <div className="card-body cardSize">
@@ -105,7 +109,17 @@ function Solutions() {
           </div>
         </div>
       </div>
+      
+
     </section>
+    <Routes>
+
+          <Route path="/Solutions/Peri" exact Component={Perimi}></Route>
+
+
+
+        </Routes>
+    </Router>
   );
 }
 
