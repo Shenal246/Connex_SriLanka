@@ -1,0 +1,16 @@
+.vendorTitel{
+    text-align: center;
+}
+
+.headingrow{
+    padding-top: 5%;
+}
+
+.vendorName{
+    background-color: aliceblue;
+    border: 5%;
+}
+
+.tags{
+    padding: 5%;
+}

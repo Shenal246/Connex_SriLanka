@@ -31,6 +31,7 @@ import tld from '../../images/FlagIcon/thailand.png';
 // import Networking from '../Solutions/solutionVendors/Networking/Networking';
 // import Security from '../Solutions/solutionVendors/Security/Security';
 // import Server from '../Solutions/solutionVendors/ServerBackup/Server';
+import products from '../Products/products';
 
 
 function Navbar() {
@@ -118,7 +119,7 @@ function Navbar() {
                 <NavLink to="/About" activeClassName='active-link' exact><li><a className="">Products</a></li></NavLink>
                 <NavLink to="/Solutions" activeClassName='active-link' exact><li><a className="">Solutions</a></li></NavLink>
                 <NavLink to="/Events&News" activeClassName='active-link' exact><li><a className="">Event & News</a></li></NavLink>
-                <NavLink to="/About" activeClassName='active-link' exact><li><a className="">Portal</a></li></NavLink>
+                <NavLink to="/Products" activeClassName='active-link' exact><li><a className="">Portal</a></li></NavLink>
                 
                 <li className="dropdown countries"><a href="#" className='toggle-dropdown'>
                   <span className='toggle-dropdown'>Countries&nbsp;<i className="fa-solid fa-globe"></i> </span> <i className="bi bi-chevron-down toggle-dropdown arrow " style={{ fontSize: '1em'}}></i></a>
@@ -166,6 +167,7 @@ function Navbar() {
           {/* <Route path="/Networking" exact Component={Networking}></Route> */}
           {/* <Route path="/Security" exact Component={Security}></Route> */}
           {/* <Route path="/Server" exact Component={Server}></Route> */}
+          <Route path="/Products" exact Component={products}></Route>
           
           
 
