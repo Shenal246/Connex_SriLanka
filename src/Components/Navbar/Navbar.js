@@ -7,6 +7,7 @@ import Home from '../Home/Home';
 import Events from '../Events&News/Events';
 import ContactUs from '../ContactUs/Contact';
 import Solutions from '../Solutions/Solutions';
+// import Portal from '../Solutions/solutionVendors/Perimia/Perimia';
 
 import sin from '../../images/FlagIcon/singapore.png';
 import aus from '../../images/FlagIcon/australia.png';
@@ -22,6 +23,14 @@ import mrt from '../../images/FlagIcon/mauritius.png';
 import sl from '../../images/FlagIcon/sri-lanka.png';
 import tnz from '../../images/FlagIcon/tanzania.png';
 import tld from '../../images/FlagIcon/thailand.png';
+// import Perimia from '../Solutions/solutionVendors/Perimia/Perimia';
+// import Authentication from '../Solutions/solutionVendors/Authentication/Authentication';
+// import CyberSecurity from '../Solutions/solutionVendors/CyberSecurity/CyberSecurity';
+// import Endpoint from '../Solutions/solutionVendors/Endpoint/Endpoin';
+// import InfrastructureMonitoring from '../Solutions/solutionVendors/Infrastructure/InfrastructureMonitoring';
+// import Networking from '../Solutions/solutionVendors/Networking/Networking';
+// import Security from '../Solutions/solutionVendors/Security/Security';
+// import Server from '../Solutions/solutionVendors/ServerBackup/Server';
 
 
 function Navbar() {
@@ -149,6 +158,16 @@ function Navbar() {
           <Route path="/Events&News" exact Component={Events}></Route>
           <Route path="/ContactUs" exact Component={ContactUs}></Route>
           <Route path="/Solutions" exact Component={Solutions}></Route>
+          {/* <Route path="/Perimia" exact Component={Perimia}></Route> */}
+          {/* <Route path="/Authentication" exact Component={Authentication}></Route> */}
+          {/* <Route path="/CyberSecurity" exact Component={CyberSecurity}></Route> */}
+          {/* <Route path="/Endpoin" exact Component={Endpoint}></Route> */}
+          {/* <Route path="/InfrastructureMonitoring" exact Component={InfrastructureMonitoring}></Route> */}
+          {/* <Route path="/Networking" exact Component={Networking}></Route> */}
+          {/* <Route path="/Security" exact Component={Security}></Route> */}
+          {/* <Route path="/Server" exact Component={Server}></Route> */}
+          
+          
 
 
 

@@ -32,7 +32,7 @@ function Solutions() {
             </NavLink>
           </div>
           <div className="col">
-            <NavLink to="/About" activeClassName='active-link'>
+            <NavLink to="/Solutions/CyberSecurity" activeClassName='active-link'>
               <div className="card crd">
                 <img src={cyber} className="card-img-top" alt="Cyber Security Governance & Compliance" />
                 <div className="card-body cardSize">
