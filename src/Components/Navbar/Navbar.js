@@ -118,27 +118,44 @@ function Navbar() {
                 <NavLink to="/About" activeClassName='active-link' exact><li><a className="">About Us</a></li></NavLink>
                 <NavLink to="/About" activeClassName='active-link' exact><li><a className="">Products</a></li></NavLink>
                 <NavLink to="/Solutions" activeClassName='active-link' exact><li><a className="">Solutions</a></li></NavLink>
-                <NavLink to="/Events&News" activeClassName='active-link' exact><li><a className="">Event & News</a></li></NavLink>
-                <NavLink to="/Products" activeClassName='active-link' exact><li><a className="">Portal</a></li></NavLink>
-                
+
+
                 <li className="dropdown countries"><a href="#" className='toggle-dropdown'>
-                  <span className='toggle-dropdown'>Countries&nbsp;<i className="fa-solid fa-globe"></i> </span> <i className="bi bi-chevron-down toggle-dropdown arrow " style={{ fontSize: '1em'}}></i></a>
+                  <span className='toggle-dropdown'>Events & News&nbsp; </span> <i className="bi bi-chevron-down toggle-dropdown arrow "></i></a>
+                  <ul className=''>
+                    <div >
+                      <NavLink to="/Events&News" activeClassName='active-link' exact>
+                        <a href="#">Latest News</a>
+                      </NavLink>
+                      <NavLink to="/Events&News" activeClassName='active-link' exact>
+                       <a href="#">Upcoming News</a>
+                      </NavLink>
+
+
+                    </div>
+                  </ul>
+                </li>
+
+                <NavLink to="/Products" activeClassName='active-link' exact><li><a className="">Portal</a></li></NavLink>
+
+                <li className="dropdown countries"><a href="#" className='toggle-dropdown'>
+                  <span className='toggle-dropdown'>Countries&nbsp;<i className="fa-solid fa-globe"></i> </span> <i className="bi bi-chevron-down toggle-dropdown arrow " style={{ fontSize: '1em' }}></i></a>
                   <ul className='container1'>
                     <div class="scrollable-menu flagName">
-                      <li><a href="#"><img src={sin} alt=" Flag" className='flag'/> Singapore (HQ)</a></li>
-                      <li><a href="#"><img src={aus} alt=" Flag" className='flag'/> Australia</a></li>
-                      <li><a href="#"><img src={ban} alt=" Flag" className='flag'/> Bangladesh</a></li>
-                      <li><a href="#"><img src={bru} alt=" Flag" className='flag'/>Brunei</a></li>
-                      <li><a href="#"><img src={cam} alt=" Flag" className='flag'/>Cambodia</a></li>
-                      <li><a href="#"><img src={wor} alt=" Flag" className='flag'/>UAE</a></li>
-                      <li><a href="#"><img src={ind} alt=" Flag" className='flag'/>India</a></li>
-                      <li><a href="#"><img src={laos} alt=" Flag" className='flag'/>Laos</a></li>
-                      <li><a href="#"><img src={mld} alt=" Flag" className='flag'/>Maldives</a></li>
-                      <li><a href="#"><img src={myn} alt=" Flag" className='flag'/>Myanmar</a></li>
-                      <li><a href="#"><img src={mrt} alt=" Flag" className='flag'/>Mauritius</a></li>
-                      <li><a href="#"><img src={sl} alt=" Flag" className='flag'/>Sri Lanka</a></li>
-                      <li><a href="#"><img src={tnz} alt=" Flag" className='flag'/>Tanzania</a></li>
-                      <li><a href="#"><img src={tld} alt=" Flag" className='flag'/>Thailand</a></li>
+                      <li><a href="#"><img src={sin} alt=" Flag" className='flag' /> Singapore (HQ)</a></li>
+                      <li><a href="#"><img src={aus} alt=" Flag" className='flag' /> Australia</a></li>
+                      <li><a href="#"><img src={ban} alt=" Flag" className='flag' /> Bangladesh</a></li>
+                      <li><a href="#"><img src={bru} alt=" Flag" className='flag' />Brunei</a></li>
+                      <li><a href="#"><img src={cam} alt=" Flag" className='flag' />Cambodia</a></li>
+                      <li><a href="#"><img src={wor} alt=" Flag" className='flag' />UAE</a></li>
+                      <li><a href="#"><img src={ind} alt=" Flag" className='flag' />India</a></li>
+                      <li><a href="#"><img src={laos} alt=" Flag" className='flag' />Laos</a></li>
+                      <li><a href="#"><img src={mld} alt=" Flag" className='flag' />Maldives</a></li>
+                      <li><a href="#"><img src={myn} alt=" Flag" className='flag' />Myanmar</a></li>
+                      <li><a href="#"><img src={mrt} alt=" Flag" className='flag' />Mauritius</a></li>
+                      <li><a href="#"><img src={sl} alt=" Flag" className='flag' />Sri Lanka</a></li>
+                      <li><a href="#"><img src={tnz} alt=" Flag" className='flag' />Tanzania</a></li>
+                      <li><a href="#"><img src={tld} alt=" Flag" className='flag' />Thailand</a></li>
                     </div>
                   </ul>
                 </li>
@@ -168,8 +185,8 @@ function Navbar() {
           {/* <Route path="/Security" exact Component={Security}></Route> */}
           {/* <Route path="/Server" exact Component={Server}></Route> */}
           <Route path="/Products" exact Component={products}></Route>
-          
-          
+
+
 
 
 
