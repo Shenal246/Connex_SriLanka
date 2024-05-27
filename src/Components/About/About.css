@@ -11,6 +11,7 @@
     background-color: #10055b25;
     padding: 2%;
     border-bottom: 1px solid green;
+    margin-left: -7%;
   }
 
   #t2 {
@@ -172,11 +173,13 @@
   }
 
   .imageMap {
-
     margin-bottom: 40px;
-    margin-left: 6%;
+    margin-left: 10%;
   }
-
+  
+  .text{
+    margin-left: -4%;
+  }
   
   
 
@@ -190,7 +193,7 @@
     border-radius: 50px;
     align-items: center;
     border: 3px solid #4EC3F5;
-    margin-left: 10%;
+    /* margin-left: 10%; */
   }
 
   .bdround {
@@ -198,6 +201,11 @@
     /* Set left border */
     border-right: 2px solid #4EC3F5;
     border-radius: 50px;
+       
+  }
+
+  .bdround2{
+    margin-bottom: 10% !important;
   }
 
   .story {
@@ -205,9 +213,9 @@
     color: white;
     margin-top: 15%;
     text-align: justify;
-    padding: 4%;
+    /* padding: 4%; */
     text-align: center;
-    margin-left: 5%;
+    margin-left: 15%;
   }
 
   .slider {
@@ -218,8 +226,8 @@
     align-items: center;
     padding: 2%;
     border-radius: 50px;
-    margin-top: 5%;
-    margin-bottom: 5%;
+    margin-top: 8% !important;
+    margin-bottom: 10% !important;
 
 
   }
@@ -238,6 +246,7 @@
     margin-top: 10%;
     font-size: 15px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+   padding-left: 13%;
   }
 
   .slider .sl h4 {
@@ -247,6 +256,7 @@
     font-style: italic;
     color: rgb(4, 137, 8);
     font-size: 12px;
+   
   }
 
   .slider .sl p {
@@ -261,28 +271,32 @@
     width: 365px;
     margin-left: -90px;
     margin-bottom: 50PX;
+  }
 
+  .map {
+    width: 400px;
+    height: auto;
 
   }
 
+  .imageMap {
+    margin-bottom: 40px;
+    margin-left: 10%;
+  }
   
+  .text{
+    margin-left: -4%;
+  }
 
 }
 
-/*/////////////////////////////////////////*/
-/* 
-.center {
-  margin-left: 10%;
-} */
-
-/* .container {
-  width: 50%;
-} */
+/* ////////////////// */
 
 #t1 {
   background-color: #10055b25;
   padding: 2%;
   border-bottom: 1px solid green;
+
 }
 
 #t2 {
@@ -300,11 +314,13 @@
 }
 
 .story {
-  width: 70%;
+  /* increasing the with of vision mission */
+  width: 90%;  
   color: white;
   margin-top: 15%;
   text-align: justify;
   padding: 4%;
+  margin-left: 5%;
 }
 
 .bdround {
@@ -320,7 +336,7 @@
 
 .slider {
   margin: auto;
-  width: 60%;
+  width: 70%;
   height: 100%;
   background-color: #f9f9f921;
   align-items: center;
@@ -339,8 +355,9 @@
 
 .slider .sl h3 {
   margin-top: 10%;
-  margin-left: -15%;
+  margin-left: -10%;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  
 }
 
 .slider .sl h4 {
@@ -348,6 +365,7 @@
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   font-style: italic;
   color: rgb(4, 137, 8);
+  
 }
 
 .slider .sl p {
@@ -444,6 +462,13 @@ button {
 }
 
 .imageMap {
-
   margin-bottom: 40px;
+}
+
+.classss{
+  text-align: center;
+}
+
+.topic{
+  text-align: center;
 }
