@@ -1,6 +1,8 @@
 import './Hero.css';
 import Logo from '../../../images/hero.png';
 import React, { useEffect } from 'react';
+import { NavLink } from "react-router-dom";
+
 
 
 function HeroSection() {
@@ -20,7 +22,7 @@ function HeroSection() {
               <div class="col-lg-6 order-2 order-lg-1 d-flex flex-column justify-content-center">
 
                 <div class="d-flex">
-                  <a href="index.html#about" class="btn-get-started">Contact Us</a>
+                  <NavLink to="/ContactUs" className="btn-get-started" >Contact Us</NavLink>
                   <a href="https://www.youtube.com/watch?v=LXb3EKWsInQ" class="glightbox btn-watch-video d-flex align-items-center"><i class="bi bi-play-circle"></i><span>Watch Video</span></a>
                 </div>
               </div>

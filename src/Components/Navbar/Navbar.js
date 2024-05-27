@@ -164,7 +164,7 @@ function Navbar() {
               <i className="mobile-nav-toggle d-xl-none bi bi-list"></i>
             </nav>
 
-            <NavLink to="/ContactUs" activeClassName='active-link' className="btn-getstarted" href="">Contact Us</NavLink>
+            <NavLink to="/ContactUs" activeClassName='active-link' className="btn-getstarted" >Contact Us</NavLink>
 
           </div>
         </header>
