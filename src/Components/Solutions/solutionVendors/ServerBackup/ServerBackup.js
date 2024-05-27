@@ -1,5 +1,5 @@
 import React from 'react';
-import './Server.css';
+import './ServerBackup.css';
 import ven1 from '../../../../images/vendorLogos/1.png';
 import ven2 from '../../../../images/vendorLogos/10.png';
 
