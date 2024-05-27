@@ -189,11 +189,16 @@ const About = () => {
                     
 
                 </div> */}
+            <div className="row" data-aos="fade-down" data-aos-duration="1000" data-aos-delay="50">
+                <div className="col-4"><hr /></div>
+                <div className="col-4"><p id='countriesText'>Countries</p></div>
+                <div className="col-4"><hr /></div>
+            </div>
 
             <div className='row imageMap'>
-                <div className="row gy-3 text">
+                <div className="row text">
                     <div className="col-3" ></div>
-                    <div className="col-6" > <img src={card1} className="map rounded-5 opacity-75 " alt="ConnexIT Logo"  /></div>
+                    <div className="col-6" > <img src={card1} className="map rounded-5 opacity-75 " alt="ConnexIT Logo" /></div>
                     <div className="col-3" ></div>
                 </div>
             </div>
