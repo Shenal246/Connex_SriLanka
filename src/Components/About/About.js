@@ -35,29 +35,60 @@ function SamplePrevArrow(props) {
 const About = () => {
     const data = [
         {
-            name: 'Nirosh Madushan Nirosh Madushan',
-            img: '/quots/Rajiv.jpg',
+            name: 'Suresh Wijesinghe',
+            img: '/quots/Suresh.jpg',
             quote: '“Sample text quote place hear”',
-            post: 'Founder',
+            post: 'Founder / CEO',
         },
         {
-            name: 'Nirosh Madushan',
-            img: '/quots/Rajiv.jpg',
+            name: 'Shamal Aberathne',
+            img: '/quots/Shamal.jpg',
             quote: '“Sample text quote place hear”',
-            post: 'Founder',
+            post: 'CMO',
         },
         {
-            name: 'Nirosh Madushan',
-            img: '/quots/Rajiv.jpg',
+            name: 'Dilshan De Silva',
+            img: '/quots/Dilshan_Silva.jpg',
             quote: '“Sample text quote place hear”',
-            post: 'Founder',
+            post: 'COO',
         },
         {
-            name: 'test',
+            name: 'Rohan Samaraweera',
+            img: '/quots/Rohan.jpg',
+            quote: '“Sample text quote place hear”',
+            post: 'CTO',
+        },
+        {
+            name: 'Rajiv Senawirathne',
             img: '/quots/Rajiv.jpg',
             quote: '“Sample text quote place hear”',
-            post: 'Founder',
+            post: 'Director of Connex HQ',
+        },
+        {
+            name: 'Patric Yogarathnam',
+            img: '/quots/Patrick_yogarathnam.jpg',
+            quote: '“Sample text quote place hear”',
+            post: 'CIR',
+        },
+        {
+            name: 'Eranga Wickramasinghe',
+            img: '/quots/Eranga.jpg',
+            quote: '“Sample text quote place hear”',
+            post: 'CRO',
+        },
+        {
+            name: 'Janani Siriwardhane',
+            img: '/quots/Janani_Siriardhane.jpg',
+            quote: '“Sample text quote place hear”',
+            post: 'Director of Connex HQ',
+        },
+        {
+            name: 'Romesh De Silva',
+            img: '/quots/romesh.jpg',
+            quote: '“Sample text quote place hear”',
+            post: 'Director of Connex HQ',
         }
+
     ];
     var settings = {
         dots: true,
