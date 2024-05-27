@@ -2,9 +2,9 @@
 /* Nav Menu Colors */
 :root {
   --nav-color: #ffffff;
-  --nav-hover-color: #eb5d1e;
+  --nav-hover-color: #00ff59;
   --nav-dropdown-color: #212529;
-  --nav-dropdown-hover-color: #eb5d1e;
+  --nav-dropdown-hover-color: #00ff59;
   --nav-dropdown-background-color: #ffffff;
 }
 

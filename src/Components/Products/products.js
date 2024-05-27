@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import './products.css';
+import card1 from '../../images/news.png';
+import Card from 'react-bootstrap/Card';
 
 function Products() {
     const [selectedVendor, setSelectedVendor] = useState('');
@@ -35,7 +37,7 @@ function Products() {
                     </div>
 
                     <div className="col-4">
-                        
+
                     </div>
 
                     <div className="col-4">
@@ -46,6 +48,20 @@ function Products() {
                             <option value="Three">Three</option>
                         </select>
                     </div>
+                </div>
+
+                <div className="row cards">
+
+                    {/* first card */}
+                    <div className="col-lg-4">
+                        <Card style={{ width: '18rem' }} className='m-3'>
+                            <img src={card1} className="opacity-75 productImage" alt="ConnexIT Logo" style={{ width: '100%', height: 'auto' }} />
+                            <Card.Body className='CBody'>
+                                <Card.Title>Product Name</Card.Title>
+                            </Card.Body>
+                        </Card>
+                    </div>
+
                 </div>
 
 

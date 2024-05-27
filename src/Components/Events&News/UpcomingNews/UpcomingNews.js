@@ -1,10 +1,10 @@
 import React, { useRef } from 'react';
 import { Link } from 'react-router-dom';
-import './Events.css';
-import card1 from '../../images/news.png';
-import vid1 from './Video/videoplayback.mp4';
+import './UpcomingNews.css';
+import card1 from '../../../images/news.png';
+import vid1 from '../Video/videoplayback.mp4';
 
-const Events = () => {
+const UpcomingNews = () => {
     const videoRef = useRef(null); // Create a ref for the video element
 
     const handleCloseModal = () => {
@@ -18,16 +18,11 @@ const Events = () => {
             <div className='row'>
                 <div className="row text">
                     <div className="col-4" data-aos="fade-up" data-aos-delay="100"><hr /></div>
-                    <div className="col-4" data-aos="fade-up" data-aos-delay="100"><p id='EventsText'>Events & News</p></div>
+                    <div className="col-4" data-aos="fade-up" data-aos-delay="100"><p id='UpcomingNewsText'>Upcoming <br /> Events & News</p></div>
                     <div className="col-4" data-aos="fade-up" data-aos-delay="100"><hr /></div>
                 </div>
             </div>
 
-            {/* Latest News */}
-            <div className='row'>
-                <div className='subTopin'>Latest Events & News</div>
-            </div>
-
             {/* first row  */}
             <div className="row cards">
 
@@ -66,52 +61,6 @@ const Events = () => {
                     </div>
                 </div>
             </div>
-
-            {/* News */}
-            <div className='row'>
-                <div className='subTopin'>Events & News</div>
-            </div>
-
-            {/* first row  */}
-            <div className="row cards">
-
-                {/* first card */}
-                <div className="col-lg-4">
-                    <div className="card mb-3 card1 text-light position-relative crd rounded-5 " data-bs-toggle="modal" data-bs-target="#videoModal">
-                        <div className="position-relative">
-                            <img src={card1} className="card-img-top image rounded-top-5 opacity-75 " alt="ConnexIT Logo" style={{ width: '100%', height: 'auto' }} />
-                            <div className="centered">
-                                <Link to="" className="fa-solid fa-play playicon"></Link>
-                            </div>
-                        </div>
-                        <div className="card-body card1 rounded-top-1 rounded-bottom-5">
-                            <div className="row">
-                                <h5 className="card-title small-title">Card title.n publishing and graphic  is a ful content. Lorem ipsum may be used as a placeholder before the final co. Card title.n publishing and graphic  is a ful content. </h5>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-
-                {/* second card */}
-                <div className="col-lg-4">
-                    <div className="card mb-3 card1 text-light position-relative crd rounded-5 " data-bs-toggle="modal" data-bs-target="#videoModal">
-                        <div className="position-relative">
-                            <img src={card1} className="card-img-top image rounded-top-5 opacity-75 " alt="ConnexIT Logo" style={{ width: '100%', height: 'auto' }} />
-                            <div className="centered">
-                                <Link to="" className="fa-solid fa-play playicon"></Link>
-                            </div>
-                        </div>
-                        <div className="card-body card1 rounded-top-1 rounded-bottom-5">
-                            <div className="row">
-                                <h5 className="card-title small-title">Card title.n publishing and graphic  is a ful content. Lorem ipsum may be used as a placeholder before the final co. Card title.n publishing and graphic  is a ful content. </h5>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-
 
             <div className="modal fade" id="videoModal" tabIndex="-1" aria-labelledby="videoModalLabel" aria-hidden="true" onClick={handleCloseModal}>
                 <div className="modal-dialog modal-dialog-centered modal-xl">
@@ -135,4 +84,4 @@ const Events = () => {
     );
 }
 
-export default Events;
+export default UpcomingNews;

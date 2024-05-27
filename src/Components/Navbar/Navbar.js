@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Route, Routes, NavLink } from "react-router-do
 import About from '../About/About';
 import Home from '../Home/Home';
 import Events from '../Events&News/Events';
+import UpcomingEvents from '../Events&News/UpcomingNews/UpcomingNews';
 import ContactUs from '../ContactUs/Contact';
 import Solutions from '../Solutions/Solutions';
 import CyberSecurity from '../Solutions/solutionVendors/CyberSecurity/CyberSecurity';
@@ -116,7 +117,7 @@ function Navbar() {
             <nav id="navmenu" className="navmenu">
               <ul class="no-bullets">
                 <NavLink to="/About" activeClassName='active-link' exact><li><a className="">About Us</a></li></NavLink>
-                <NavLink to="/About" activeClassName='active-link' exact><li><a className="">Products</a></li></NavLink>
+                <NavLink to="/Products" activeClassName='active-link' exact><li><a className="">Products</a></li></NavLink>
                 <NavLink to="/Solutions" activeClassName='active-link' exact><li><a className="">Solutions</a></li></NavLink>
 
 
@@ -125,10 +126,10 @@ function Navbar() {
                   <ul className=''>
                     <div >
                       <NavLink to="/Events&News" activeClassName='active-link' exact>
-                        <a href="#">Latest News</a>
+                        <a>Events & News</a>
                       </NavLink>
-                      <NavLink to="/Events&News" activeClassName='active-link' exact>
-                        <a href="#">Upcoming News</a>
+                      <NavLink to="/UpcomingNews" activeClassName='active-link' exact>
+                        <a>Upcoming News</a>
                       </NavLink>
 
 
@@ -153,7 +154,7 @@ function Navbar() {
                       <li><a href="#"><img src={mld} alt=" Flag" className='flag' />Maldives</a></li>
                       <li><a href="#"><img src={myn} alt=" Flag" className='flag' />Myanmar</a></li>
                       <li><a href="#"><img src={mrt} alt=" Flag" className='flag' />Mauritius</a></li>
-                      <li><a href="#"><img src={sl} alt=" Flag" className='flag' />Sri Lanka</a></li>
+                      {/* <li><a href="#"><img src={sl} alt=" Flag" className='flag' />Sri Lanka</a></li> */}
                       <li><a href="#"><img src={tnz} alt=" Flag" className='flag' />Tanzania</a></li>
                       <li><a href="#"><img src={tld} alt=" Flag" className='flag' />Thailand</a></li>
                     </div>
@@ -173,7 +174,8 @@ function Navbar() {
 
           <Route path="" exact Component={Home}></Route>
           <Route path="/About" exact Component={About}></Route>
-          <Route path="/Events&News" exact Component={Events}></Route>
+          <Route path="/Events&News" exact element={<Events />}></Route>
+          <Route path="/UpcomingNews" exact element={<UpcomingEvents />}></Route>
           <Route path="/ContactUs" exact Component={ContactUs}></Route>
           <Route path="/Solutions" exact Component={Solutions}></Route>
           <Route path="/Products" exact Component={products}></Route>

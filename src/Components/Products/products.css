@@ -1,16 +1,32 @@
-.vendorTitel{
+.vendorTitel {
     text-align: center;
 }
 
-.headingrow{
+.headingrow {
     padding-top: 5%;
 }
 
-.vendorName{
+.vendorName {
     background-color: aliceblue;
     border: 5%;
 }
 
-.tags{
+.tags {
     padding: 5%;
+}
+
+.productcard {
+    text-align: center;
+}
+
+.CBody {
+    text-align: center;
+    padding: 5px !important;
+    background-color: #01066B;
+    color: white !important;
+    border-radius: 0px 0px 5px 5px;
+}
+
+.productImage{
+    border-radius: 5px 5px 0px 0px;
 }
