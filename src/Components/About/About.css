@@ -10,14 +10,14 @@
   #t1 {
     background-color: #10055b25;
     padding: 2%;
-    border-bottom: 1px solid green;
+    /* border-bottom: 1px solid green; */
     margin-left: -7%;
   }
 
   #t2 {
     background-color: #21025a54;
     padding: 2%;
-    border-bottom: 1px solid green;
+    /* border-bottom: 1px solid green; */
   }
 
   .headimg {
@@ -244,7 +244,7 @@
   .slider .sl h3 {
     text-align: center;
     margin-top: 10%;
-    font-size: 15px;
+    font-size: 20px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
    padding-left: 13%;
   }
@@ -255,7 +255,7 @@
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-style: italic;
     color: rgb(4, 137, 8);
-    font-size: 12px;
+    font-size: 18px !important;
    
   }
 
@@ -264,7 +264,7 @@
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-style: italic;
     color: rgb(4, 137, 8);
-    font-size: 10px;
+    font-size: 13px !important;
   }
 
   .map {
@@ -273,19 +273,9 @@
     margin-bottom: 50PX;
   }
 
-  .map {
-    width: 400px;
-    height: auto;
-
-  }
-
-  .imageMap {
-    margin-bottom: 40px;
-    margin-left: 10%;
-  }
-  
-  .text{
-    margin-left: -4%;
+  .map{
+    width: 370px !important;
+    margin-left: -75px;
   }
 
 }
@@ -295,14 +285,14 @@
 #t1 {
   background-color: #10055b25;
   padding: 2%;
-  border-bottom: 1px solid green;
+  /* border-bottom: 1px solid green; */
 
 }
 
 #t2 {
   background-color: #21025a54;
   padding: 2%;
-  border-bottom: 1px solid green;
+  /* border-bottom: 1px solid green; */
 }
 
 .headimg {
@@ -365,6 +355,7 @@
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   font-style: italic;
   color: rgb(4, 137, 8);
+  font-size: 35px;
   
 }
 
@@ -372,6 +363,7 @@
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   font-style: italic;
   color: rgb(4, 137, 8);
+  font-size: 20px;
 }
 
 .sld {
