@@ -7,7 +7,14 @@ import Home from '../Home/Home';
 import Events from '../Events&News/Events';
 import ContactUs from '../ContactUs/Contact';
 import Solutions from '../Solutions/Solutions';
-// import Portal from '../Solutions/solutionVendors/Perimia/Perimia';
+import CyberSecurity from '../Solutions/solutionVendors/CyberSecurity/CyberSecurity';
+import Authentication from '../Solutions/solutionVendors/Authentication/Authentication';
+import SecurityManagement from '../Solutions/solutionVendors/Security/Security';
+import InternetSecurity from '../Solutions/solutionVendors/Perimia/Perimia';
+import EndpointSecurity from '../Solutions/solutionVendors/Endpoint/Endpoin';
+import Networking from '../Solutions/solutionVendors/Networking/Networking';
+import Infrastructure from '../Solutions/solutionVendors/Infrastructure/InfrastructureMonitoring';
+import Server from '../Solutions/solutionVendors/ServerBackup/ServerBackup';
 
 import sin from '../../images/FlagIcon/singapore.png';
 import aus from '../../images/FlagIcon/australia.png';
@@ -23,14 +30,7 @@ import mrt from '../../images/FlagIcon/mauritius.png';
 import sl from '../../images/FlagIcon/sri-lanka.png';
 import tnz from '../../images/FlagIcon/tanzania.png';
 import tld from '../../images/FlagIcon/thailand.png';
-// import Perimia from '../Solutions/solutionVendors/Perimia/Perimia';
-// import Authentication from '../Solutions/solutionVendors/Authentication/Authentication';
-// import CyberSecurity from '../Solutions/solutionVendors/CyberSecurity/CyberSecurity';
-// import Endpoint from '../Solutions/solutionVendors/Endpoint/Endpoin';
-// import InfrastructureMonitoring from '../Solutions/solutionVendors/Infrastructure/InfrastructureMonitoring';
-// import Networking from '../Solutions/solutionVendors/Networking/Networking';
-// import Security from '../Solutions/solutionVendors/Security/Security';
-// import Server from '../Solutions/solutionVendors/ServerBackup/Server';
+
 import products from '../Products/products';
 
 
@@ -128,7 +128,7 @@ function Navbar() {
                         <a href="#">Latest News</a>
                       </NavLink>
                       <NavLink to="/Events&News" activeClassName='active-link' exact>
-                       <a href="#">Upcoming News</a>
+                        <a href="#">Upcoming News</a>
                       </NavLink>
 
 
@@ -176,17 +176,16 @@ function Navbar() {
           <Route path="/Events&News" exact Component={Events}></Route>
           <Route path="/ContactUs" exact Component={ContactUs}></Route>
           <Route path="/Solutions" exact Component={Solutions}></Route>
-          {/* <Route path="/Perimia" exact Component={Perimia}></Route> */}
-          {/* <Route path="/Authentication" exact Component={Authentication}></Route> */}
-          {/* <Route path="/CyberSecurity" exact Component={CyberSecurity}></Route> */}
-          {/* <Route path="/Endpoin" exact Component={Endpoint}></Route> */}
-          {/* <Route path="/InfrastructureMonitoring" exact Component={InfrastructureMonitoring}></Route> */}
-          {/* <Route path="/Networking" exact Component={Networking}></Route> */}
-          {/* <Route path="/Security" exact Component={Security}></Route> */}
-          {/* <Route path="/Server" exact Component={Server}></Route> */}
           <Route path="/Products" exact Component={products}></Route>
 
-
+          <Route path="/Solutions/CyberSecurity" element={<CyberSecurity />} />
+          <Route path="/Solutions/Authentication" element={<Authentication />} />
+          <Route path="/Solutions/SecurityManagement" element={<SecurityManagement />} />
+          <Route path="/Solutions/InternetSecurity" element={<InternetSecurity />} />
+          <Route path="/Solutions/EndpointSecurity" element={<EndpointSecurity />} />
+          <Route path="/Solutions/Networking" element={<Networking />} />
+          <Route path="/Solutions/Infrastructure" element={<Infrastructure />} />
+          <Route path="/Solutions/Server" element={<Server />} />
 
 
 

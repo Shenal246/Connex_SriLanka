@@ -22,7 +22,7 @@ function Solutions() {
         </div>
         <div className="row row-cols-2 row-cols-lg-4 g-2 g-lg-3 rowmargin">
           <div className="col">
-            <NavLink to="" activeClassName='active-link'>
+            <NavLink to="/Solutions/InternetSecurity" activeClassName='active-link'>
               <div className="card crd">
                 <img src={Perimie} className="card-img-top" alt="Perimeter and Internal Security" />
                 <div className="card-body cardSize">
@@ -42,7 +42,7 @@ function Solutions() {
             </NavLink>
           </div>
           <div className="col">
-            <NavLink to="/About" activeClassName='active-link'>
+            <NavLink to="/Solutions/Authentication" activeClassName='active-link'>
               <div className="card crd">
                 <img src={Authitianit} className="card-img-top" alt="Authentication & Identity Management" />
                 <div className="card-body cardSize">
@@ -52,7 +52,7 @@ function Solutions() {
             </NavLink>
           </div>
           <div className="col">
-            <NavLink to="/About" activeClassName='active-link'>
+            <NavLink to="/Solutions/SecurityManagement" activeClassName='active-link'>
               <div className="card crd">
                 <img src={Security} className="card-img-top" alt="Security Management" />
                 <div className="card-body cardSize">
@@ -62,7 +62,7 @@ function Solutions() {
             </NavLink>
           </div>
           <div className="col">
-            <NavLink to="/About" activeClassName='active-link'>
+            <NavLink to="/Solutions/EndpointSecurity" activeClassName='active-link'>
               <div className="card crd">
                 <img src={datapoint} className="card-img-top" alt="Endpoint Security" />
                 <div className="card-body cardSize">
@@ -72,7 +72,7 @@ function Solutions() {
             </NavLink>
           </div>
           <div className="col">
-            <NavLink to="/About" activeClassName='active-link'>
+            <NavLink to="/Solutions/Networking" activeClassName='active-link'>
               <div className="card crd">
                 <img src={networking} className="card-img-top" alt="Networking" />
                 <div className="card-body cardSize">
@@ -82,7 +82,7 @@ function Solutions() {
             </NavLink>
           </div>
           <div className="col">
-            <NavLink to="/About" activeClassName='active-link'>
+            <NavLink to="/Solutions/Infrastructure" activeClassName='active-link'>
               <div className="card crd">
                 <img src={endpoint} className="card-img-top" alt="Data Center Infrastructure and Infrastructure Monitoring" />
                 <div className="card-body cardSize">
@@ -92,7 +92,7 @@ function Solutions() {
             </NavLink>
           </div>
           <div className="col column">
-            <NavLink to="/About" activeClassName='active-link'>
+            <NavLink to="/Solutions/Server" activeClassName='active-link'>
               <div className="card crd">
                 <img src={servers} className="card-img-top" alt="Server Storage & Backup Solutions" />
                 <div className="card-body cardSize">
