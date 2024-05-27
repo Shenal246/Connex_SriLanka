@@ -10,13 +10,13 @@
   #t1 {
     background-color: #10055b25;
     padding: 2%;
-    /* border-bottom: 1px solid green; */
+    border-bottom: 1px solid green;
   }
 
   #t2 {
     background-color: #21025a54;
     padding: 2%;
-    /* border-bottom: 1px solid green; */
+    border-bottom: 1px solid green;
   }
 
   .headimg {
@@ -177,8 +177,8 @@
     margin-left: 6%;
   }
 
-
-
+  
+  
 
 }
 
@@ -265,7 +265,7 @@
 
   }
 
-
+  
 
 }
 
@@ -282,13 +282,13 @@
 #t1 {
   background-color: #10055b25;
   padding: 2%;
-  /* border-bottom: 1px solid green; */
+  border-bottom: 1px solid green;
 }
 
 #t2 {
   background-color: #21025a54;
   padding: 2%;
-  /* border-bottom: 1px solid green; */
+  border-bottom: 1px solid green;
 }
 
 .headimg {
@@ -446,11 +446,4 @@ button {
 .imageMap {
 
   margin-bottom: 40px;
-}
-
-#countriesText {
-  text-align: center;
-  font-size: 50px;
-  color: white;
-  opacity: 0.9;
 }
