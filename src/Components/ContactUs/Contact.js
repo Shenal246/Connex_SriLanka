@@ -1,13 +1,21 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import axios from 'axios';
+import ReCAPTCHA from 'react-google-recaptcha';
 import './Contact.css';
 
 const Contact = () => {
     const { register, handleSubmit, reset } = useForm();
     const formRef = useRef();
+    const [isHuman, setIsHuman] = useState(false);
+    const recaptchaRef = useRef();
 
     const onSubmit = async (data) => {
+        if (!isHuman) {
+            alert('Please verify that you are a human!');
+            return;
+        }
+
         try {
             const response = await axios.post('http://localhost:5000/send-email', data);
             console.log(response.data);
@@ -17,44 +25,94 @@ const Contact = () => {
         }
     };
 
+    const handleRecaptchaChange = (value) => {
+        setIsHuman(!!value);
+    };
+
     return (
         <div className="container">
             <div className='row'>
                 <div className="row gy-3 text mb-4" data-aos="fade-down" data-aos-duration="1000" data-aos-delay="50">
-                    <div className="col-4"><hr /></div>
-                    <div className="col-4"><p id='Text'>Let’s Talk</p></div>
-                    <div className="col-4"><hr /></div>
+                    <div className="col-md-4"><hr /></div>
+                    <div className="col-md-4"><p id='Text'>Contact Us</p></div>
+                    <div className="col-md-4"><hr /></div>
                 </div>
             </div>
-            <div className="row">
-                <div className="col-md-6 inputField" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="50">
+            <div className="row ">
+                <div className="col-md inputField" data-aos="fade-down" data-aos-duration="1000" data-aos-delay="50">
+                    <h1 className='h1'>Reach out to us <br /> to let us know how<br /> we can assist you.</h1>
+                    <h2 className='h2'>We are happy to provide  <br /> customer support or <br />answer   any general inquiries  <br /> you may have.</h2>
+                </div>
+                <div className="col-md inputField" data-aos="fade-down" data-aos-duration="1000" data-aos-delay="50">
                     <form ref={formRef} onSubmit={handleSubmit(onSubmit)}>
-                        <div className="form-floating mb-3">
-                            <input type="text" className="form-control" id="floatingInput" placeholder="name" {...register('name', { required: true })} />
-                            <label htmlFor="floatingInput">Name</label>
+                        <div className="form-floating col-md-mb-3">
+                            <div className="row mt-4 mb-4">
+                                <div className="col-md mb-3">
+                                    <input type="text" className="form-control" placeholder="First name" aria-label="First name" {...register('firstName', { required: true })} />
+                                 
+                                </div>
+                                <div className="col-md">
+                                    <input type="text" className="form-control" placeholder="Last name" aria-label="Last name" {...register('lastName', { required: true })} />
+                   
+                                </div>
+                            </div>
                         </div>
-                        <div className="form-floating mb-3">
+
+                        <div className="col-md mb-4">
                             <input type="email" className="form-control" id="floatingInput" placeholder="name@example.com" {...register('email', { required: true })} />
-                            <label htmlFor="floatingInput">Email address</label>
+         
                         </div>
-                        <div className="form-floating">
-                            <textarea className="form-control" placeholder="Leave a comment here" id="floatingTextarea2" {...register('comments', { required: true })}></textarea>
-                            <label htmlFor="floatingTextarea2">Comments</label>
+
+                        <div className="col-md">
+                            <textarea className="form-control txtarea" placeholder="Leave a comment here" id="floatingTextarea2" {...register('comments', { required: true })}></textarea>
+             
                         </div>
-                        <div className="row mt-3 btnContainer">
-                            <div className="col-6">
+
+                        <div className="row mt-4 btnContainer">
+                            <div className="col-md-6 mb-3">
                                 <button type="submit" className="btn btn-success">Submit</button>
                             </div>
-                            <div className="col-6">
+                            <div className="col-md-6">
                                 <button type="reset" className="btn btn-danger" onClick={() => reset()}>Clear</button>
                             </div>
                         </div>
                     </form>
-                </div>
-                <div className="col-md-6 inputField" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="50">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.8378227416442!2d79.84946567448274!3d6.909986818552493!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae25965c4fa5a01%3A0x2773f36f89729e4e!2sConnex%20Information%20Technologies%20(Pvt)%20Ltd.!5e0!3m2!1sen!2slk!4v1715597396485!5m2!1sen!2slk" className='frame' title="Company Location"></iframe>
+
+                    <div className="form-check formcheck">
+                        <input className="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
+                        <label className="form-check-label tikBox" htmlFor="flexCheckDefault">
+                            I accept the privacy & policy
+                        </label>
+                    </div>
+
+                    <div className="mt-3">
+                            <ReCAPTCHA
+                                ref={recaptchaRef}
+                                sitekey="YOUR_RECAPTCHA_SITE_KEY"
+                                onChange={handleRecaptchaChange}
+                            />
+                    </div>
                 </div>
             </div>
+
+
+            <div className="row ">
+                <div className="col-md-md-6 countryData ">
+                   <h1 className='countryName address3'>Sri Lanka</h1>
+                   <h3>Sri Lankan Office</h3>
+                            <p className='txt'> <i className="fas fa-map-marker-alt img3 "  ></i>
+                                 No 286,<br/>
+                                <span className='address'>R. A. De Mel Mawatha,</span><br/>  
+                                <span className='address'> col-mdombo 00300,</span> <br />
+                                <span className='address'>Sri Lanka .</span><br />
+                                <i className="fas fa-phone-volume callIcon3" ></i>Contact: +11 22334455
+                            </p>
+                </div>
+                <div className="col-md-md-6 ">
+                    
+                </div>
+            </div>
+
         </div>
     );
 }
