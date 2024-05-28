@@ -15,7 +15,7 @@ const Events = () => {
         if (videoRef.current) {
             videoRef.current.pause();
         }
-        setCurrentVideoLink(null); // Clear the video link when the modal is closed
+        setCurrentVideoLink(null);
     };
 
     const handleCardClick = (nlink) => {
