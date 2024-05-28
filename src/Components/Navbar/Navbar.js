@@ -117,7 +117,7 @@ function Navbar() {
             <nav id="navmenu" className="navmenu">
               <ul class="no-bullets">
                 <NavLink to="/About" activeClassName='active-link' exact><li><a className="">About Us</a></li></NavLink>
-                <NavLink to="/Products" activeClassName='active-link' exact><li><a className="">Products</a></li></NavLink>
+                {/* <NavLink to="/Products" activeClassName='active-link' exact><li><a className="">Products</a></li></NavLink> */}
                 <NavLink to="/Solutions" activeClassName='active-link' exact><li><a className="">Solutions</a></li></NavLink>
 
 
@@ -178,7 +178,7 @@ function Navbar() {
           <Route path="/UpcomingNews" exact element={<UpcomingEvents />}></Route>
           <Route path="/ContactUs" exact Component={ContactUs}></Route>
           <Route path="/Solutions" exact Component={Solutions}></Route>
-          <Route path="/Products" exact Component={products}></Route>
+          {/* <Route path="/Products" exact Component={products}></Route> */}
 
           <Route path="/Solutions/CyberSecurity" element={<CyberSecurity />} />
           <Route path="/Solutions/Authentication" element={<Authentication />} />
