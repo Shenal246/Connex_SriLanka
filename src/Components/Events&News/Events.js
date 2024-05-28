@@ -1,17 +1,52 @@
-import React, { useRef } from 'react';
+import React, { useRef, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import './Events.css';
 import card1 from '../../images/news.png';
-import vid1 from './Video/videoplayback.mp4';
+import axios from "axios";
+import Card from 'react-bootstrap/Card';
 
 const Events = () => {
-    const videoRef = useRef(null); // Create a ref for the video element
+    const videoRef = useRef(null);
+    const [newsData, setNewsData] = useState([]);
+    const [othernewsData, setOtherNewsData] = useState([]);
+    const [currentVideoLink, setCurrentVideoLink] = useState(null);
 
     const handleCloseModal = () => {
         if (videoRef.current) {
-            videoRef.current.pause(); // Pause the video
+            videoRef.current.pause();
         }
+        setCurrentVideoLink(null); // Clear the video link when the modal is closed
     };
+
+    const handleCardClick = (nlink) => {
+        setCurrentVideoLink(nlink);
+    };
+
+    useEffect(() => {
+        const values = {
+            query: "SELECT title,nlink,newstype_id,status_id FROM news WHERE newstype_id=1 AND status_id=1;",
+            key: "Cr6re8VRBm"
+        };
+
+        axios.post("http://192.168.13.75:5000/search", values).then((response) => {
+            setNewsData(response.data);
+        }).catch((err) => {
+            console.log(err);
+        });
+
+        // For other news
+        const values1 = {
+            query: "SELECT title,nlink,newstype_id,status_id FROM news WHERE newstype_id=4 AND status_id=1;",
+            key: "Cr6re8VRBm"
+        };
+
+        axios.post("http://192.168.13.75:5000/search", values1).then((response) => {
+            setOtherNewsData(response.data);
+        }).catch((err) => {
+            console.log(err);
+        });
+
+    }, []);
 
     return (
         <div className="container">
@@ -28,109 +63,100 @@ const Events = () => {
                 <div className='subTopin'>Latest Events & News</div>
             </div>
 
-            {/* first row  */}
             <div className="row cards">
-
-                {/* first card */}
-                <div className="col-lg-4">
-                    <div className="card mb-3 card1 text-light position-relative crd rounded-5 " data-bs-toggle="modal" data-bs-target="#videoModal">
-                        <div className="position-relative">
-                            <img src={card1} className="card-img-top image rounded-top-5 opacity-75 " alt="ConnexIT Logo" style={{ width: '100%', height: 'auto' }} />
-                            <div className="centered">
-                                <Link to="" className="fa-solid fa-play playicon"></Link>
+                {newsData.map((news, index) => (
+                    <div className="col-lg-4" key={index}>
+                        <div className="card mb-3 card1 text-light position-relative crd rounded-5" data-bs-toggle="modal" data-bs-target="#videoModal" onClick={() => handleCardClick(news.nlink)}>
+                            <div className="position-relative">
+                                <img src={card1} className="card-img-top image rounded-top-5 opacity-75" alt="ConnexIT Logo" style={{ width: '100%', height: 'auto' }} />
+                                <div className="centered">
+                                    <Link to="#" className="fa-solid fa-play playicon"></Link>
+                                </div>
                             </div>
-                        </div>
-                        <div className="card-body card1 rounded-top-1 rounded-bottom-5">
-                            <div className="row">
-                                <h5 className="card-title small-title">Card title.n publishing and graphic  is a ful content. Lorem ipsum may be used as a placeholder before the final co. Card title.n publishing and graphic  is a ful content. </h5>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-
-                {/* second card */}
-                <div className="col-lg-4">
-                    <div className="card mb-3 card1 text-light position-relative crd rounded-5 " data-bs-toggle="modal" data-bs-target="#videoModal">
-                        <div className="position-relative">
-                            <img src={card1} className="card-img-top image rounded-top-5 opacity-75 " alt="ConnexIT Logo" style={{ width: '100%', height: 'auto' }} />
-                            <div className="centered">
-                                <Link to="" className="fa-solid fa-play playicon"></Link>
-                            </div>
-                        </div>
-                        <div className="card-body card1 rounded-top-1 rounded-bottom-5">
-                            <div className="row">
-                                <h5 className="card-title small-title">Card title.n publishing and graphic  is a ful content. Lorem ipsum may be used as a placeholder before the final co. Card title.n publishing and graphic  is a ful content. </h5>
+                            <div className="card-body card1 rounded-top-1 rounded-bottom-5">
+                                <div className="row">
+                                    <h5 className="card-title small-title">{news.title}</h5>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
+                ))}
             </div>
 
-            {/* News */}
-            <div className='row'>
-                <div className='subTopin'>Events & News</div>
-            </div>
-
-            {/* first row  */}
-            <div className="row cards">
-
-                {/* first card */}
-                <div className="col-lg-4">
-                    <div className="card mb-3 card1 text-light position-relative crd rounded-5 " data-bs-toggle="modal" data-bs-target="#videoModal">
-                        <div className="position-relative">
-                            <img src={card1} className="card-img-top image rounded-top-5 opacity-75 " alt="ConnexIT Logo" style={{ width: '100%', height: 'auto' }} />
-                            <div className="centered">
-                                <Link to="" className="fa-solid fa-play playicon"></Link>
-                            </div>
-                        </div>
-                        <div className="card-body card1 rounded-top-1 rounded-bottom-5">
-                            <div className="row">
-                                <h5 className="card-title small-title">Card title.n publishing and graphic  is a ful content. Lorem ipsum may be used as a placeholder before the final co. Card title.n publishing and graphic  is a ful content. </h5>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-
-                {/* second card */}
-                <div className="col-lg-4">
-                    <div className="card mb-3 card1 text-light position-relative crd rounded-5 " data-bs-toggle="modal" data-bs-target="#videoModal">
-                        <div className="position-relative">
-                            <img src={card1} className="card-img-top image rounded-top-5 opacity-75 " alt="ConnexIT Logo" style={{ width: '100%', height: 'auto' }} />
-                            <div className="centered">
-                                <Link to="" className="fa-solid fa-play playicon"></Link>
-                            </div>
-                        </div>
-                        <div className="card-body card1 rounded-top-1 rounded-bottom-5">
-                            <div className="row">
-                                <h5 className="card-title small-title">Card title.n publishing and graphic  is a ful content. Lorem ipsum may be used as a placeholder before the final co. Card title.n publishing and graphic  is a ful content. </h5>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-
-
+            {/* Modal */}
             <div className="modal fade" id="videoModal" tabIndex="-1" aria-labelledby="videoModalLabel" aria-hidden="true" onClick={handleCloseModal}>
                 <div className="modal-dialog modal-dialog-centered modal-xl">
                     <div className="modal-content modalClr">
                         <div className="modal-header">
-                            {/* <h5 className="modal-title" id="videoModalLabel">Video Title</h5> */}
                             <button type="button" className="btn-close close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div className="modal-body">
-                            <video controls ref={videoRef} style={{ width: '100%' }}>
-                                <source src={vid1} type="video/mp4" />
-                                Your browser does not support the video tag.
-                            </video>
+                            {currentVideoLink && (
+                                <iframe
+                                    width="1100"
+                                    height="500"
+                                    src={currentVideoLink}
+                                    title="Video Player"
+                                    frameBorder="0"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                    referrerPolicy="strict-origin-when-cross-origin"
+                                    allowFullScreen
+                                ></iframe>
+                            )}
                         </div>
                     </div>
                 </div>
             </div>
 
+            {/* Other News */}
+            <div className='row'>
+                <div className='subTopin'>Events & News</div>
+            </div>
 
+            <div className="row cards">
+                {othernewsData.map((news, index) => (
+                    <div className="col-lg-4" key={index}>
+                        <div className="card mb-3 card1 text-light position-relative crd rounded-5" data-bs-toggle="modal" data-bs-target="#videoModal" onClick={() => handleCardClick(news.nlink)}>
+                            <div className="position-relative">
+                                <img src={card1} className="card-img-top image rounded-top-5 opacity-75" alt="ConnexIT Logo" style={{ width: '100%', height: 'auto' }} />
+                                <div className="centered">
+                                    <Link to="#" className="fa-solid fa-play playicon"></Link>
+                                </div>
+                            </div>
+                            <div className="card-body card1 rounded-top-1 rounded-bottom-5">
+                                <div className="row">
+                                    <h5 className="card-title small-title">{news.title}</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                ))}
+            </div>
+
+            {/* Modal */}
+            <div className="modal fade" id="videoModal" tabIndex="-1" aria-labelledby="videoModalLabel" aria-hidden="true" onClick={handleCloseModal}>
+                <div className="modal-dialog modal-dialog-centered modal-xl">
+                    <div className="modal-content modalClr">
+                        <div className="modal-header">
+                            <button type="button" className="btn-close close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div className="modal-body">
+                            {currentVideoLink && (
+                                <iframe
+                                    width="1100"
+                                    height="500"
+                                    src={currentVideoLink}
+                                    title="Video Player"
+                                    frameBorder="0"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                    referrerPolicy="strict-origin-when-cross-origin"
+                                    allowFullScreen
+                                ></iframe>
+                            )}
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     );
 }

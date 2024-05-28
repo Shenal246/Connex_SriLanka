@@ -1,6 +1,6 @@
-.cards{
+.cards {
     padding-top: 2%;
-    
+
 }
 
 /* Add this style to your Events.css file */
@@ -8,40 +8,43 @@
     background-color: red;
 }
 
-.crd{
-   
+.crd {
+
     margin-top: 7px;
 }
 
-.card1{
+.card1 {
     background-color: #01066B;
     padding: 2px;
-    
+    width: 400px;
 }
 
-.textclr{
+.textclr {
     color: white;
 }
 
 .small-title {
-    font-size: 16px; /* Adjust font size as needed */
-    line-height: 1.2; /* Adjust line height as needed */
+    font-size: 16px;
+    /* Adjust font size as needed */
+    line-height: 1.2;
+    /* Adjust line height as needed */
 }
 
 .card-img-top {
-    border-radius: 5px; /* Optional: Added border radius to the image */
+    border-radius: 5px;
+    /* Optional: Added border radius to the image */
 }
 
-.playicon{
-    font-size:xx-large;
+.playicon {
+    font-size: xx-large;
     padding: 15px;
     color: #01066B !important;
-   
-   
+
+
 }
 
-.playicon:hover{
-    font-size:xx-large;
+.playicon:hover {
+    font-size: xx-large;
     padding: 15px;
     color: #ffffff !important;
 }
@@ -63,6 +66,7 @@
 .fa-play.bttn {
     font-size: 2.3rem;
 }
+
 /* Events.css */
 
 .crd {
@@ -89,15 +93,15 @@
     opacity: 0.9;
 }
 
-.text{
+.text {
     padding-top: 2%;
 }
 
-.modalClr{
+.modalClr {
     background-color: #2b2d6366 !important;
 }
 
-.close{
+.close {
     background-color: #ffffff !important;
 }
 
@@ -118,12 +122,12 @@
         font-size: 21px;
     }
 
-    .subTopin{
+    .subTopin {
         font-size: 10px;
     }
 }
 
-.subTopin{
+.subTopin {
     font-size: 30px;
     color: rgb(158, 165, 226);
 }
