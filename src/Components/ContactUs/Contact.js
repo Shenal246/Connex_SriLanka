@@ -5,7 +5,7 @@ import ReCAPTCHA from 'react-google-recaptcha';
 import './Contact.css';
 
 const Contact = () => {
-    const { register, handleSubmit, reset } = useForm();
+    const { register, handleSubmit, reset, formState: { errors } } = useForm();
     const formRef = useRef();
     const [isHuman, setIsHuman] = useState(false);
     const recaptchaRef = useRef();
@@ -38,38 +38,130 @@ const Contact = () => {
                     <div className="col-md-4"><hr /></div>
                 </div>
             </div>
-            <div className="row ">
+            <div className="row">
                 <div className="col-md inputField" data-aos="fade-down" data-aos-duration="1000" data-aos-delay="50">
                     <h1 className='h1'>Reach out to us <br /> to let us know how<br /> we can assist you.</h1>
-                    <h2 className='h2'>We are happy to provide  <br /> customer support or <br />answer   any general inquiries  <br /> you may have.</h2>
+                    <h2 className='h2'>We are happy to provide <br /> customer support or <br />answer any general inquiries <br /> you may have.</h2>
                 </div>
                 <div className="col-md inputField" data-aos="fade-down" data-aos-duration="1000" data-aos-delay="50">
                     <form ref={formRef} onSubmit={handleSubmit(onSubmit)}>
-                        <div className="form-floating col-md-mb-3">
-                            <div className="row mt-4 mb-4">
-                                <div className="col-md mb-3">
-                                    <input type="text" className="form-control" placeholder="First name" aria-label="First name" {...register('firstName', { required: true })} />
-                                 
+                        <div className="form-floating col-md-mb-2">
+                            <div className="row mt-4 mb-2">
+                                <div className="col-md mb-2">
+                                    <input
+                                        type="text"
+                                        className={`form-control ${errors.firstName ? 'is-invalid' : ''}`}
+                                        placeholder="First name"
+                                        aria-label="First name"
+                                        {...register('firstName', {
+                                            required: true,
+                                            pattern: {
+                                                value: /^[A-Za-z]+$/,
+                                                message: 'First name must contain only letters',
+                                            },
+                                        })}
+                                    />
+                                    {errors.firstName && <span className="text-danger">{errors.firstName.message || 'First name is required'}</span>}
                                 </div>
                                 <div className="col-md">
-                                    <input type="text" className="form-control" placeholder="Last name" aria-label="Last name" {...register('lastName', { required: true })} />
-                   
+                                    <input
+                                        type="text"
+                                        className={`form-control ${errors.lastName ? 'is-invalid' : ''}`}
+                                        placeholder="Last name"
+                                        aria-label="Last name"
+                                        {...register('lastName', {
+                                            required: true,
+                                            pattern: {
+                                                value: /^[A-Za-z]+$/,
+                                                message: 'Last name must contain only letters',
+                                            },
+                                        })}
+                                    />
+                                    {errors.lastName && <span className="text-danger">{errors.lastName.message || 'Last name is required'}</span>}
+                                </div>
+                            </div>
+                            <div className="row mb-2">
+                                <div className="col-md mb-2">
+                                    <input
+                                        type="text"
+                                        className={`form-control ${errors.Company ? 'is-invalid' : ''}`}
+                                        placeholder="Company"
+                                        aria-label="Company"
+                                        {...register('Company', { required: true })}
+                                    />
+                                    {errors.Company && <span className="text-danger">Company is required</span>}
+                                </div>
+                                <div className="col-md">
+                                    <input
+                                        type="text"
+                                        className={`form-control ${errors.contactNumber ? 'is-invalid' : ''}`}
+                                        placeholder="Contact Number"
+                                        aria-label="Contact Number"
+                                        {...register('contactNumber', {
+                                            required: true,
+                                            pattern: {
+                                                value: /^[0-9]+$/,
+                                                message: 'Invalid contact number',
+                                            },
+                                            validate: {
+                                                length: (value) => value.length === 10 || 'Contact number must be exactly 10 digits',
+                                            },
+                                        })}
+                                    />
+                                    {errors.contactNumber && <span className="text-danger">{errors.contactNumber.message || 'Contact number is required'}</span>}
                                 </div>
                             </div>
                         </div>
 
-                        <div className="col-md mb-4">
-                            <input type="email" className="form-control" id="floatingInput" placeholder="name@example.com" {...register('email', { required: true })} />
-         
+                        <div className="col-md mb-3">
+                            <input
+                                type="email"
+                                className={`form-control ${errors.email ? 'is-invalid' : ''}`}
+                                id="floatingInput"
+                                placeholder="name@example.com"
+                                {...register('email', {
+                                    required: true,
+                                    pattern: {
+                                        value: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
+                                        message: 'Invalid email address',
+                                    },
+                                })}
+                            />
+                            {errors.email && <span className="text-danger">{errors.email.message || 'Email is required'}</span>}
                         </div>
 
                         <div className="col-md">
-                            <textarea className="form-control txtarea" placeholder="Leave a comment here" id="floatingTextarea2" {...register('comments', { required: true })}></textarea>
-             
+                            <textarea
+                                className={`form-control txtarea ${errors.comments ? 'is-invalid' : ''}`}
+                                placeholder="Leave a comment here"
+                                id="floatingTextarea2"
+                                {...register('comments', { required: true })}
+                            ></textarea>
+                            {errors.comments && <span className="text-danger">Comments are required</span>}
                         </div>
 
+                        <div className="form-check formcheck">
+                            <input
+                                className={`form-check-input ${errors.acceptTerms ? 'is-invalid' : ''}`}
+                                type="checkbox"
+                                id="flexCheckDefault"
+                                {...register('acceptTerms', { required: true })}
+                            />
+                            <label className="form-check-label tikBox" htmlFor="flexCheckDefault">
+                                I accept the privacy & policy
+                            </label>
+                            {errors.acceptTerms && <span className="text-danger">You must accept the privacy & policy</span>}
+                        </div>
+
+                        <div className="mt-3">
+                            <ReCAPTCHA
+                                ref={recaptchaRef}
+                                sitekey="YOUR_RECAPTCHA_SITE_KEY"
+                                onChange={handleRecaptchaChange}
+                            />
+                        </div>
                         <div className="row mt-4 btnContainer">
-                            <div className="col-md-6 mb-3">
+                            <div className="col-md-6 mb-2">
                                 <button type="submit" className="btn btn-success">Submit</button>
                             </div>
                             <div className="col-md-6">
@@ -77,42 +169,25 @@ const Contact = () => {
                             </div>
                         </div>
                     </form>
-
-                    <div className="form-check formcheck">
-                        <input className="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
-                        <label className="form-check-label tikBox" htmlFor="flexCheckDefault">
-                            I accept the privacy & policy
-                        </label>
-                    </div>
-
-                    <div className="mt-3">
-                            <ReCAPTCHA
-                                ref={recaptchaRef}
-                                sitekey="YOUR_RECAPTCHA_SITE_KEY"
-                                onChange={handleRecaptchaChange}
-                            />
-                    </div>
                 </div>
             </div>
 
-
-            <div className="row ">
-                <div className="col-md-md-6 countryData ">
-                   <h1 className='countryName address3'>Sri Lanka</h1>
-                   <h3>Sri Lankan Office</h3>
-                            <p className='txt'> <i className="fas fa-map-marker-alt img3 "  ></i>
-                                 No 286,<br/>
-                                <span className='address'>R. A. De Mel Mawatha,</span><br/>  
-                                <span className='address'> col-mdombo 00300,</span> <br />
-                                <span className='address'>Sri Lanka .</span><br />
-                                <i className="fas fa-phone-volume callIcon3" ></i>Contact: +11 22334455
-                            </p>
+            <div className="row">
+                <div className="col-md-md-6 countryData">
+                    <h1 className='countryName address3'>Sri Lanka</h1>
+                    <h3>Sri Lankan Office</h3>
+                    <p className='txt'><i className="fas fa-map-marker-alt img3"></i>
+                        No 286,<br />
+                        <span className='address'>R. A. De Mel Mawatha,</span><br />
+                        <span className='address'>Colombo 00300,</span><br />
+                        <span className='address'>Sri Lanka</span>
+                    </p>
+                    <button className="neon-button">Get Directions</button>
+                    <hr className='line'></hr>
                 </div>
-                <div className="col-md-md-6 ">
-                    
+                <div className="col-md-md-6">
                 </div>
             </div>
-
         </div>
     );
 }
