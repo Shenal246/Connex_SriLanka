@@ -54,10 +54,7 @@ function HeroSection() {
               <button type="button" className="btn-close close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div className="modal-body">
-              <video controls ref={videoRef} style={{ width: '100%' }}>
-                <source src={vid1} type="video/mp4" />
-                Your browser does not support the video tag.
-              </video>
+            <iframe className='video'  src="https://www.youtube.com/embed/FCe1vPuB954?si=5cqHj3a1AtVZqFcN" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
             </div>
           </div>
         </div>

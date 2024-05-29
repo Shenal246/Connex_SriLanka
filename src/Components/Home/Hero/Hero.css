@@ -123,6 +123,11 @@ h3{
     .hero{
         padding-top: 10px !important;
     }
+
+    .video{
+        width: 380px !important ;
+    height: 250px !important;
+    }
 }
 
 @keyframes up-down {
@@ -142,4 +147,9 @@ h3{
 
 .Connexnex{
     color: #20B14A;
+}
+
+.video{
+    width: 1100px;
+    height: 500px;
 }
