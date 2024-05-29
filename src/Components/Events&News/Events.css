@@ -131,6 +131,14 @@
     }
 }
 
+@media (max-width: 1440px) {
+    .card1 {
+        background-color: #01066B;
+        padding: 2px;
+        width: 350px;
+    }
+}
+
 .subTopin {
     font-size: 30px;
     color: rgb(158, 165, 226);

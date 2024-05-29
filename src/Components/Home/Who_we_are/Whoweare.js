@@ -86,7 +86,7 @@ function WhoweareSection() {
                       </div>
                     </div>
                     <div className='row textRow'>
-                      <p className='iconText'>{counterOn && <CountUp start={0} end={2014} duration={2} delay={0.5} separator="" />}+<br /> Founder</p>
+                      <p className='iconText'>{counterOn && <CountUp start={0} end={2014} duration={2} delay={0.5} separator="" />}<br /> Founder</p>
                     </div>
                   </div>
 
@@ -143,7 +143,7 @@ function WhoweareSection() {
         aria-labelledby="example-modal-sizes-title-lg"
         className='disModel'
       >
-        <Modal.Header closeButton varient='white' className='model-header'>
+        <Modal.Header closeButton closeVariant='white' className='model-header'>
           <Modal.Title id="example-modal-sizes-title-lg">
             Distribution
           </Modal.Title>
@@ -174,7 +174,7 @@ function WhoweareSection() {
         aria-labelledby="example-modal-sizes-title-lg"
         className='disModel'
       >
-        <Modal.Header closeButton className='model-header'>
+        <Modal.Header closeButton closeVariant='white' className='model-header'>
           <Modal.Title id="example-modal-sizes-title-lg">
             Consultancy
           </Modal.Title>
@@ -206,7 +206,7 @@ function WhoweareSection() {
         aria-labelledby="example-modal-sizes-title-lg"
         className='disModel'
       >
-        <Modal.Header closeButton className='model-header'>
+        <Modal.Header closeButton closeVariant='white' className='model-header'>
           <Modal.Title id="example-modal-sizes-title-lg">
             Training
           </Modal.Title>
@@ -243,7 +243,7 @@ function WhoweareSection() {
         aria-labelledby="example-modal-sizes-title-lg"
         className='disModel'
       >
-        <Modal.Header closeButton className='model-header'>
+        <Modal.Header closeButton closeVariant='white' className='model-header'>
           <Modal.Title id="example-modal-sizes-title-lg">
             TAC Support
           </Modal.Title>

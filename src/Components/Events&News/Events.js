@@ -63,7 +63,7 @@ const Events = () => {
                 <div className='subTopin'>Latest Events & News</div>
             </div>
 
-            <div className="row cards">
+            <div className="row cards"> 
                 {newsData.map((news, index) => (
                     <div className="col-lg-4" key={index}>
                         <div className="card mb-3 card1 text-light position-relative crd rounded-5" data-bs-toggle="modal" data-bs-target="#videoModal" onClick={() => handleCardClick(news.nlink)}>

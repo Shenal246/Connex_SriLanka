@@ -1,11 +1,68 @@
 import './Latest.css';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
-import { BsArrowRight } from 'react-icons/bs'; // Importing Bootstrap icon
+import { BsArrowRight } from 'react-icons/bs'; 
+import axios from "axios";
 
 import Latest1 from '../../../images/Latest/1.png';
+import { useState, useEffect } from 'react';
 
 const Latest = () => {
+    const [latestOne,setLatestOne] = useState(null);
+    const [latestTwo,setLatestTwo] = useState(null);
+    const [latestThree,setLatestThree] = useState(null);
+    const [latestFour,setLatestFour] = useState(null);
+
+    useEffect(() => {
+        // Latest One
+        const values = {
+            query: "SELECT title,nlink,newstype_id,status_id FROM news WHERE newstype_id=2 AND status_id=1;",
+            key: "Cr6re8VRBm"
+        };
+
+        axios.post("http://192.168.13.75:5000/search", values).then((response) => {
+            setLatestOne(response.data);
+        }).catch((err) => {
+            console.log(err);
+        });
+
+        // Latest Two
+        const value2 = {
+            query: "SELECT title,nlink,newstype_id,status_id FROM news WHERE newstype_id=2 AND status_id=1;",
+            key: "Cr6re8VRBm"
+        };
+
+        axios.post("http://192.168.13.75:5000/search", value2).then((response) => {
+            setLatestTwo(response.data);
+        }).catch((err) => {
+            console.log(err);
+        });
+
+        // Latest Three
+        const value3 = {
+            query: "SELECT title,nlink,newstype_id,status_id FROM news WHERE newstype_id=2 AND status_id=1;",
+            key: "Cr6re8VRBm"
+        };
+
+        axios.post("http://192.168.13.75:5000/search", value3).then((response) => {
+            setLatestThree(response.data);
+        }).catch((err) => {
+            console.log(err);
+        });
+
+        // Latest One
+        const value4 = {
+            query: "SELECT title,nlink,newstype_id,status_id FROM news WHERE newstype_id=2 AND status_id=1;",
+            key: "Cr6re8VRBm"
+        };
+
+        axios.post("http://192.168.13.75:5000/search", value4).then((response) => {
+            setLatestFour(response.data);
+        }).catch((err) => {
+            console.log(err);
+        });
+
+    }, []);
 
     return (
         <section >
@@ -13,7 +70,7 @@ const Latest = () => {
                 <div className="row gy-3 headingRow" data-aos="fade-down" data-aos-duration="1000" data-aos-delay="50">
                     <div className="col-4"><hr /></div>
                     <div className="col-4"><p id='whoweareText'>Latest News</p></div>
-                    <div className="col-4"><hr /></div>
+                    <div className="col-4"><hr /></div> 
                 </div>
 
                 <div className="row backgrnd" >
