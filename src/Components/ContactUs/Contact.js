@@ -53,15 +53,9 @@ const Contact = () => {
                                         className={`form-control ${errors.firstName ? 'is-invalid' : ''}`}
                                         placeholder="First name"
                                         aria-label="First name"
-                                        {...register('firstName', {
-                                            required: true,
-                                            pattern: {
-                                                value: /^[A-Za-z]+$/,
-                                                message: 'First name must contain only letters',
-                                            },
-                                        })}
+                                        {...register('firstName', { required: true })}
                                     />
-                                    {errors.firstName && <span className="text-danger">{errors.firstName.message || 'First name is required'}</span>}
+                                    {errors.firstName && <span className="text-danger">First name is required</span>}
                                 </div>
                                 <div className="col-md">
                                     <input
@@ -69,15 +63,9 @@ const Contact = () => {
                                         className={`form-control ${errors.lastName ? 'is-invalid' : ''}`}
                                         placeholder="Last name"
                                         aria-label="Last name"
-                                        {...register('lastName', {
-                                            required: true,
-                                            pattern: {
-                                                value: /^[A-Za-z]+$/,
-                                                message: 'Last name must contain only letters',
-                                            },
-                                        })}
+                                        {...register('lastName', { required: true })}
                                     />
-                                    {errors.lastName && <span className="text-danger">{errors.lastName.message || 'Last name is required'}</span>}
+                                    {errors.lastName && <span className="text-danger">Last name is required</span>}
                                 </div>
                             </div>
                             <div className="row mb-2">
@@ -182,7 +170,12 @@ const Contact = () => {
                         <span className='address'>Colombo 00300,</span><br />
                         <span className='address'>Sri Lanka</span>
                     </p>
-                    <button className="neon-button">Get Directions</button>
+                    <button 
+                        className="neon-button" 
+                        onClick={() => window.open('https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.8378227416442!2d79.84946567448274!3d6.909986818552493!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae25965c4fa5a01%3A0x2773f36f89729e4e!2sConnex%20Information%20Technologies%20(Pvt)%20Ltd.!5e0!3m2!1sen!2slk!4v1715597396485!5m2!1sen!2slk')}
+                    >
+                        Get Directions
+                    </button>
                     <hr className='line'></hr>
                 </div>
                 <div className="col-md-md-6">
