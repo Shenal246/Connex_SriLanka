@@ -125,6 +125,10 @@
     .subTopin {
         font-size: 10px;
     }
+
+    .card1{
+        width: 355px;
+    }
 }
 
 @media (max-width: 1440px) {
