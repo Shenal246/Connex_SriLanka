@@ -28,7 +28,7 @@ const Events = () => {
             key: "Cr6re8VRBm"
         };
 
-        axios.post("http://192.168.13.75:5000/search", values).then((response) => {
+        axios.post("https://bc-niroshmadushans-projects.vercel.app/search", values).then((response) => {
             setNewsData(response.data);
         }).catch((err) => {
             console.log(err);
@@ -40,7 +40,7 @@ const Events = () => {
             key: "Cr6re8VRBm"
         };
 
-        axios.post("http://192.168.13.75:5000/search", values1).then((response) => {
+        axios.post("https://bc-niroshmadushans-projects.vercel.app/search", values1).then((response) => {
             setOtherNewsData(response.data);
         }).catch((err) => {
             console.log(err);
@@ -63,7 +63,7 @@ const Events = () => {
                 <div className='subTopin'>Latest Events & News</div>
             </div>
 
-            <div className="row cards"> 
+            <div className="row cards">
                 {newsData.map((news, index) => (
                     <div className="col-lg-4" key={index}>
                         <div className="card mb-3 card1 text-light position-relative crd rounded-5" data-bs-toggle="modal" data-bs-target="#videoModal" onClick={() => handleCardClick(news.nlink)}>

@@ -19,7 +19,7 @@ function Perimia() {
             key: "Cr6re8VRBm"
         };
 
-        axios.post("http://192.168.13.75:5000/search", values).then((response) => {
+        axios.post("https://bc-niroshmadushans-projects.vercel.app/search", values).then((response) => {
             setVendors(response.data);
         }).catch((err) => {
             console.log(err);
