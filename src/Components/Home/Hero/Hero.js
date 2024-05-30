@@ -2,7 +2,7 @@ import './Hero.css';
 import Logo from '../../../images/hero.png';
 import React, { useRef } from 'react';
 import { NavLink } from "react-router-dom";
-import vid1 from '../../Events&News/Video/videoplayback.mp4';
+// import vid1 from '../../Events&News/Video/videoplayback.mp4';
 
 function HeroSection() {
   const videoRef = useRef(null); // Create a ref for the video element
