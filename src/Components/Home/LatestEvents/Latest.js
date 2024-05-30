@@ -1,17 +1,18 @@
 import './Latest.css';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
-import { BsArrowRight } from 'react-icons/bs'; 
+import { BsArrowRight } from 'react-icons/bs';
 import axios from "axios";
+import { NavLink } from "react-router-dom";
 
 import Latest1 from '../../../images/Latest/1.png';
 import { useState, useEffect } from 'react';
 
 const Latest = () => {
-    const [latestOne,setLatestOne] = useState(null);
-    const [latestTwo,setLatestTwo] = useState(null);
-    const [latestThree,setLatestThree] = useState(null);
-    const [latestFour,setLatestFour] = useState(null);
+    const [latestOne, setLatestOne] = useState(null);
+    const [latestTwo, setLatestTwo] = useState(null);
+    const [latestThree, setLatestThree] = useState(null);
+    const [latestFour, setLatestFour] = useState(null);
 
     useEffect(() => {
         // Latest One
@@ -70,7 +71,7 @@ const Latest = () => {
                 <div className="row gy-3 headingRow" data-aos="fade-down" data-aos-duration="1000" data-aos-delay="50">
                     <div className="col-4"><hr /></div>
                     <div className="col-4"><p id='whoweareText'>Latest News</p></div>
-                    <div className="col-4"><hr /></div> 
+                    <div className="col-4"><hr /></div>
                 </div>
 
                 <div className="row backgrnd" >
@@ -130,9 +131,10 @@ const Latest = () => {
                     {/* See more button */}
                     <div className="col-md-1" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="50">
                         <div className="navigation">
-                            <Button variant="" className='iconsss' style={{ backgroundColor: '#01066B' }}>
+                            <NavLink to="/Events&News"><Button variant="" className='iconsss' style={{ backgroundColor: '#01066B' }}>
                                 <BsArrowRight size={30} />
-                            </Button>
+                            </Button></NavLink>
+
                         </div>
                     </div>
 

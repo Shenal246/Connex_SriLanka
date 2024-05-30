@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import Button from 'react-bootstrap/Button';
 import CountUp from 'react-countup';
 import ScrollTrigger from 'react-scroll-trigger';
+import { NavLink } from "react-router-dom";
 
 import Dis from '../../../images/tech/Distributer.png';
 import Con from '../../../images/tech/Consultancy.png';
@@ -86,7 +87,7 @@ function WhoweareSection() {
                       </div>
                     </div>
                     <div className='row textRow'>
-                      <p className='iconText'>{counterOn && <CountUp start={0} end={2014} duration={2} delay={0.5} separator="" />}<br /> Founder</p>
+                      <p className='iconText'>{counterOn && <CountUp start={0} end={2014} duration={2} delay={0.5} separator="" />}<br /> Founded</p>
                     </div>
                   </div>
 
@@ -160,9 +161,9 @@ function WhoweareSection() {
           </div>
         </Modal.Body>
         <Modal.Footer className='model-footer'>
-          <Button onClick={handleClose} className='contactUs-button'>
+          <NavLink to="/ContactUs"><Button onClick={handleClose} className='contactUs-button'>
             Contact Us
-          </Button>
+          </Button></NavLink>
         </Modal.Footer>
       </Modal>
 
@@ -192,9 +193,9 @@ function WhoweareSection() {
           </div>
         </Modal.Body>
         <Modal.Footer className='model-footer'>
-          <Button onClick={handleClose} className='contactUs-button'>
+          <NavLink to="/ContactUs"><Button onClick={handleClose} className='contactUs-button'>
             Contact Us
-          </Button>
+          </Button></NavLink>
         </Modal.Footer>
       </Modal>
 
@@ -229,9 +230,9 @@ function WhoweareSection() {
           </div>
         </Modal.Body>
         <Modal.Footer className='model-footer'>
-          <Button onClick={handleClose} className='contactUs-button'>
+          <NavLink to="/ContactUs"><Button onClick={handleClose} className='contactUs-button'>
             Contact Us
-          </Button>
+          </Button></NavLink>
         </Modal.Footer>
       </Modal>
 
@@ -264,9 +265,9 @@ function WhoweareSection() {
           </div>
         </Modal.Body>
         <Modal.Footer className='model-footer'>
-          <Button onClick={handleClose} className='contactUs-button'>
+          <NavLink to="/ContactUs"><Button onClick={handleClose} className='contactUs-button'>
             Contact Us
-          </Button>
+          </Button></NavLink>
         </Modal.Footer>
       </Modal>
 

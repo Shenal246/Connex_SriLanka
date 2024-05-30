@@ -54,10 +54,12 @@ hr {
     background-color: rgb(130, 163, 163);
     border-radius: 15px;
     text-align: center;
+    transition: transform 0.3s ease;
 }
 
 .welogos:hover {
     cursor: pointer;
+    transform: scale(1.04);
 }
 
 .techcontainer {
@@ -106,7 +108,7 @@ hr {
     background-color: #01066B !important;
     border: none;
     color: white;
-    width: 20%;
+    width: 100%;
 }
 
 .contactUs-button:hover {
@@ -170,13 +172,13 @@ hr {
 }
 
 @media (max-width: 1440px) {
-    .icon{
+    .icon {
         width: 52px;
     }
 
 }
 
-.icon{
+.icon {
     width: 55px;
 }
 
@@ -207,10 +209,10 @@ hr {
     text-align: center;
 }
 
-.techRow{
+.techRow {
     text-align: center;
 }
 
-.whotextRow{
+.whotextRow {
     margin-bottom: 5%;
 }
