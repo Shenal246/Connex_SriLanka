@@ -43,7 +43,7 @@ const Contact = () => {
                     <h1 className='h1'>Reach out to us <br /> to let us know how<br /> we can assist you.</h1>
                     <h2 className='h2'>We are happy to provide <br /> customer support or <br />answer any general inquiries <br /> you may have.</h2>
                 </div>
-                <div className="col-md inputField" data-aos="fade-down" data-aos-duration="1000" data-aos-delay="50">
+                <div className="col-md inputField" data-aos="fade-down" dat a-aos-duration="1000" data-aos-delay="50">
                     <form ref={formRef} onSubmit={handleSubmit(onSubmit)}>
                         <div className="form-floating col-md-mb-2">
                             <div className="row mt-4 mb-2">
@@ -164,7 +164,7 @@ const Contact = () => {
                 <div className="col-md-md-6 countryData">
                     <h1 className='countryName address3'>Sri Lanka</h1>
                     <h3>Sri Lankan Office</h3>
-                    <p className='txt'><i className="fas fa-map-marker-alt img3"></i>
+                    <p className='txt1'><i className="fas fa-map-marker-alt img3"></i>
                         No 286,<br />
                         <span className='address'>R. A. De Mel Mawatha,</span><br />
                         <span className='address'>Colombo 00300,</span><br />
