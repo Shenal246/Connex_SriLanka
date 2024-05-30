@@ -6,7 +6,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import 'animate.css';
-import card1 from '../../images/map/SL-070722-51460-10 [Converted].png';
+import card1 from '../../images/map/map trans.png';
 
 function SampleNextArrow(props) {
     const { className, style, onClick } = props;
@@ -194,9 +194,9 @@ const About = () => {
 
 <div className='row imageMap'>
                 <div className="row gy-3 text">
-                    <div className="col-3" ></div>
-                    <div className="col-6" > <img src={card1} className="map rounded-5 opacity-75 " alt="ConnexIT Logo"  /></div>
-                    <div className="col-3" ></div>
+                    <div className="col-2" ></div>
+                    <div className="col-8" > <img src={card1} className="map rounded-5 opacity-75 " alt="ConnexIT Logo"  /></div>
+                    <div className="col-2" ></div>
                 </div>
             </div>
 
