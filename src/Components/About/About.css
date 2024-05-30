@@ -22,7 +22,7 @@
 
   .headimg {
     width: 70%;
-    margin-top: 5%;
+    margin-top:  5%;
     border-radius: 50px;
     align-items: center;
     border: 3px solid #4EC3F5;
@@ -296,8 +296,8 @@
 }
 
 .headimg {
-  width: 70%;
-  margin-top: 5%;
+  width: 80%;
+  margin-top: 20%;
   border-radius: 50px;
   align-items: center;
   border: 3px solid #4EC3F5;
