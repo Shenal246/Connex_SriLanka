@@ -74,7 +74,8 @@ function WhoweareSection() {
               <div className="col-md-6 d-flex flex-column justify-content-center" data-aos="fade-down" data-aos-duration="1000" data-aos-delay="50">
 
                 <div className="row" id='whText'>
-                  <p >Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literatum passage,literature, discovered the undoubtable source.</p>
+                  <h3 className='h3'>A decade of expertise in cutting-edge technology distribution</h3>
+                  <p >A leading technology distributor thrives on adapting to the ever-changing world. If you require diverse solutions to achieve compliance and transform your business, your search ends here.</p>
                 </div>
 
 

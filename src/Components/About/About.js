@@ -37,55 +37,55 @@ const About = () => {
         {
             name: 'Suresh Wijesinghe',
             img: '/quots/Suresh.jpg',
-            quote: '“Sample text quote place hear”',
+            quote: '"Leadership is not just about making decisions; it\s about inspiring others to achieve greatness."',
             post: 'Founder / CEO',
         },
         {
             name: 'Shamal Aberathne',
             img: '/quots/Shamal.jpg',
-            quote: '“Sample text quote place hear”',
+            quote: '"In a world of noise, our brand\'s voice must be authentic, engaging, and memorable."',
             post: 'CMO',
         },
         {
             name: 'Dilshan De Silva',
             img: '/quots/Dilshan_Silva.jpg',
-            quote: '“Sample text quote place hear”',
+            quote: '"Operational excellence is the foundation of our success, driving efficiency and innovation."',
             post: 'COO',
         },
         {
             name: 'Rohan Samaraweera',
             img: '/quots/Rohan.jpg',
-            quote: '“Sample text quote place hear”',
+            quote: '"Technology transforms vision into reality, powering our journey into the future."',
             post: 'CTO',
         },
         {
             name: 'Rajiv Senawirathne',
             img: '/quots/Rajiv.jpg',
-            quote: '“Sample text quote place hear”',
+            quote: '"Customer trust and satisfaction are the cornerstones of our company\'s reputation."',
             post: 'Director of Connex HQ',
         },
         {
             name: 'Patric Yogarathnam',
             img: '/quots/Patrick_yogarathnam.jpg',
-            quote: '“Sample text quote place hear”',
+            quote: '"Connecting with our global customers requires understanding diverse needs and delivering exceptional service."',
             post: 'CIR',
         },
         {
             name: 'Eranga Wickramasinghe',
             img: '/quots/Eranga.jpg',
-            quote: '“Sample text quote place hear”',
+            quote: '"Building strong relationships with our customers is the cornerstone of our success and growth."',
             post: 'CRO',
         },
         {
             name: 'Janani Siriwardhane',
             img: '/quots/Janani_Siriardhane.jpg',
-            quote: '“Sample text quote place hear”',
+            quote: '"Empowering employees and fostering a positive culture are the keys to organizational success."',
             post: 'Director of Connex HQ',
         },
         {
             name: 'Romesh De Silva',
             img: '/quots/romesh.jpg',
-            quote: '“Sample text quote place hear”',
+            quote: '"Success in sales is not about pushing products, but about understanding and solving customer needs."',
             post: 'Director of Connex HQ',
         }
 
@@ -114,7 +114,7 @@ const About = () => {
                             <div className='col-md-6 para'>
                             <div className='story'>
                                     <h1 className='topic'>Our Story</h1>
-                                    <p><br/>Over a decade in the industry, we've empowered over 100 partners with products from 60+ vendors, serving countless successful customers.</p>
+                                    <p><br/>"Founded with a passion for technology and excellence,<br/><span className='storyCNX'> CONNEX INFORMATION TECHNOLOGY</span>  has become a leader in IT product distribution. We started with a vision to revolutionize the industry through innovative solutions and unparalleled support. Our success is built on strong relationships with our clients and partners, enabling us to adapt and meet dynamic market needs. As we grow, we remain committed to innovation, integrity, and partnership, driving mutual growth and setting new benchmarks in the industry."</p>
                                 </div>
                             </div>
                         </div>
@@ -122,16 +122,17 @@ const About = () => {
 
                         <div className='row'>
                             <div className='col-md-6 content'>
-                            <div className='story bdround'>
+                            <div className='story bdround bdround1'>
                                     <h1 className='topic'>Our Vision</h1>
-                                    <p><br/>Our vision is to be the most innovative distributor of it products in the country by developing and working closely with our valued channels through effective marketing and proficient support, thus enabling our partners and the company to grow together.</p>
+                                    <p><br/>"Our mission is to deliver high-quality IT products and solutions through our extensive network of partners. We are committed to providing exceptional service, innovative marketing, and dedicated support to ensure the success of our partners and the satisfaction of our customers, driving sustained growth and technological advancement."</p>
                                 </div>
                             </div>
 
                             <div className='col-md-6'>
                             <div className='story bdround bdround2'>
                                     <h1 className='topic'>Our Mission</h1>
-                                    <p><br/>Our vision is to be the most innovative distributor of it products in the country by developing and working closely with our valued channels through effective marketing and proficient support, thus enabling our partners and the company to grow together.</p>
+                                    <p><br/>"Our mission is to deliver high-quality IT products and solutions by leveraging our extensive network of partners and channels. We are committed to providing exceptional service, innovative marketing, and dedicated support to ensure the success of our partners and the satisfaction of our customers. Together, we strive to build a technologically advanced future and achieve sustained growth."
+</p>
                                 </div>
                             </div>
                         </div>

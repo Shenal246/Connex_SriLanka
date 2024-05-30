@@ -311,6 +311,7 @@
   text-align: justify;
   padding: 4%;
   margin-left: 5%;
+  
 }
 
 .bdround {
@@ -318,6 +319,10 @@
   /* Set left border */
   border-right: 2px solid #4EC3F5;
   border-radius: 50px;
+}
+
+.bdround1{
+ padding-bottom: 44px;
 }
 
 .spc {
@@ -465,4 +470,8 @@ button {
 
 .topic{
   text-align: center;
+}
+
+.storyCNX{
+  color: #72d551;
 }

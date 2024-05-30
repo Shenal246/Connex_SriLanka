@@ -16,6 +16,7 @@ import EndpointSecurity from '../Solutions/solutionVendors/Endpoint/Endpoin';
 import Networking from '../Solutions/solutionVendors/Networking/Networking';
 import Infrastructure from '../Solutions/solutionVendors/Infrastructure/InfrastructureMonitoring';
 import Server from '../Solutions/solutionVendors/ServerBackup/ServerBackup';
+import Portal from '../Portal/Portal'
 
 import sin from '../../images/FlagIcon/singapore.png';
 import aus from '../../images/FlagIcon/australia.png';
@@ -137,7 +138,7 @@ function Navbar() {
                   </ul>
                 </li>
 
-                <NavLink to="/Products" activeClassName='active-link' exact><li><a className="">Portal</a></li></NavLink>
+                <NavLink to="/Portal" activeClassName='active-link' exact><li><a className="">Portal</a></li></NavLink>
 
                 <li className="dropdown countries"><a href="#" className='toggle-dropdown'>
                   <span className='toggle-dropdown'>Countries&nbsp;<i className="fa-solid fa-globe"></i> </span> <i className="bi bi-chevron-down toggle-dropdown arrow " style={{ fontSize: '1em' }}></i></a>
@@ -178,7 +179,7 @@ function Navbar() {
           <Route path="/UpcomingNews" exact element={<UpcomingEvents />}></Route>
           <Route path="/ContactUs" exact Component={ContactUs}></Route>
           <Route path="/Solutions" exact Component={Solutions}></Route>
-          {/* <Route path="/Products" exact Component={products}></Route> */}
+          <Route path="/Portal" exact Component={Portal}></Route>
 
           <Route path="/Solutions/CyberSecurity" element={<CyberSecurity />} />
           <Route path="/Solutions/Authentication" element={<Authentication />} />
