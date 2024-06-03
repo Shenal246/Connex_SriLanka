@@ -6,6 +6,7 @@ import axios from "axios";
 import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
 import { Row } from 'react-bootstrap';
+import config from '../../../../config.js';
 
 function Perimia() {
     const [vendors, setVendors] = useState([]);
@@ -19,7 +20,8 @@ function Perimia() {
             key: "Cr6re8VRBm"
         };
 
-        axios.post("https://bc-niroshmadushans-projects.vercel.app/search", values).then((response) => {
+
+        axios.post(config.serverAPI, values).then((response) => {
             setVendors(response.data);
         }).catch((err) => {
             console.log(err);
