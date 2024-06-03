@@ -83,17 +83,17 @@ function Solutions() {
           </div>
           <div className="col">
             <NavLink to="/Solutions/Infrastructure" activeClassName='active-link'>
-              <div className="card crd">
+              <div className="card crd ">
                 <img src={endpoint} className="card-img-top datacenter" alt="Data Center Infrastructure and Infrastructure Monitoring" />
                 <div className="card-body cardSize">
-                  <p className="card-text txts">Data Center Infrastructure and Infrastructure Monitoring</p>
+                  <p className="card-text txts">Data Center Infrastructure and  Monitoring</p>
                 </div>
               </div>
             </NavLink>
           </div>
           <div className="col column">
             <NavLink to="/Solutions/Server" activeClassName='active-link'>
-              <div className="card crd">
+              <div className="card crd ">
                 <img src={servers} className="card-img-top" alt="Server Storage & Backup Solutions" />
                 <div className="card-body cardSize">
                   <p className="card-text txts">Server Storage & Backup Solutions</p>
