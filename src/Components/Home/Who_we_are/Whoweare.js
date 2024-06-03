@@ -71,7 +71,7 @@ function WhoweareSection() {
               </div>
 
 
-              <div className="col-md-6 d-flex flex-column justify-content-center" data-aos="fade-down" data-aos-duration="1000" data-aos-delay="50">
+              <div className="col-md-6 d-flex flex-column justify-content-center textarea" data-aos="fade-down" data-aos-duration="1000" data-aos-delay="50">
 
                 <div className="row" id='whText'>
                   <h3 className='h3'>A decade of expertise in cutting-edge technology distribution</h3>

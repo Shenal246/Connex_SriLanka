@@ -79,6 +79,10 @@ hr {
     font-weight: bold;
 }
 
+.textarea{
+    margin-top: 10px;
+}
+
 /* Model */
 .disModel {
     background-color: rgba(108, 204, 204, 0.2);
