@@ -7,6 +7,7 @@ import { NavLink } from "react-router-dom";
 
 import Latest1 from '../../../images/Latest/1.png';
 import { useState, useEffect } from 'react';
+import connections from '../../../config';
 
 const Latest = () => {
     const [latestOne, setLatestOne] = useState(null);
@@ -14,14 +15,16 @@ const Latest = () => {
     const [latestThree, setLatestThree] = useState(null);
     const [latestFour, setLatestFour] = useState(null);
 
+    const serverlink = connections.serverLink;
+
     useEffect(() => {
         // Latest One
         const values = {
-            query: "SELECT title,nlink,newstype_id,status_id FROM news WHERE newstype_id=2 AND status_id=1;",
+            query: "SELECT title,link,type,status,image_data,cnt FROM news WHERE status=1 AND cnt=1 AND type=3;",
             key: "Cr6re8VRBm"
         };
 
-        axios.post("http://192.168.13.75:5000/search", values).then((response) => {
+        axios.post(serverlink, values).then((response) => {
             setLatestOne(response.data);
         }).catch((err) => {
             console.log(err);
@@ -29,11 +32,11 @@ const Latest = () => {
 
         // Latest Two
         const value2 = {
-            query: "SELECT title,nlink,newstype_id,status_id FROM news WHERE newstype_id=2 AND status_id=1;",
+            query: "SELECT title,link,type,status,image_data,cnt FROM news WHERE status=1 AND cnt=1 AND type=4;",
             key: "Cr6re8VRBm"
         };
 
-        axios.post("http://192.168.13.75:5000/search", value2).then((response) => {
+        axios.post(serverlink, value2).then((response) => {
             setLatestTwo(response.data);
         }).catch((err) => {
             console.log(err);
@@ -41,11 +44,11 @@ const Latest = () => {
 
         // Latest Three
         const value3 = {
-            query: "SELECT title,nlink,newstype_id,status_id FROM news WHERE newstype_id=2 AND status_id=1;",
+            query: "SELECT title,link,type,status,image_data,cnt FROM news WHERE status=1 AND cnt=1 AND type=5;",
             key: "Cr6re8VRBm"
         };
 
-        axios.post("http://192.168.13.75:5000/search", value3).then((response) => {
+        axios.post(serverlink, value3).then((response) => {
             setLatestThree(response.data);
         }).catch((err) => {
             console.log(err);
@@ -53,11 +56,11 @@ const Latest = () => {
 
         // Latest One
         const value4 = {
-            query: "SELECT title,nlink,newstype_id,status_id FROM news WHERE newstype_id=2 AND status_id=1;",
+            query: "SELECT title,link,type,status,image_data,cnt FROM news WHERE status=1 AND cnt=1 AND type=6;",
             key: "Cr6re8VRBm"
         };
 
-        axios.post("http://192.168.13.75:5000/search", value4).then((response) => {
+        axios.post(serverlink, value4).then((response) => {
             setLatestFour(response.data);
         }).catch((err) => {
             console.log(err);
@@ -79,9 +82,9 @@ const Latest = () => {
                         {/* first image of the first column */}
                         <div className="mb-2">
                             <Card className='cardContainer1'>
-                                <Card.Img variant="top" src={Latest1} className='image1' />
+                                <Card.Img variant="top" src={latestOne && latestOne.image_data} className='image1' />
                                 <Card.Body className='cardBody'>
-                                    <Card.Title>Card Title 1</Card.Title>
+                                    <Card.Title>{latestOne && latestTwo.title}</Card.Title>
                                 </Card.Body>
                             </Card>
                         </div>

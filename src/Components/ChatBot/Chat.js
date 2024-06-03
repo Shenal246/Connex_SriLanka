@@ -65,7 +65,7 @@ function Chat() {
         steps={[
           {
             id: '1',
-            message: 'Hi! We are here to help you. Can I know your name?',
+            message: 'Hi! I am here to help you. Can I know your name?',
             trigger: '2',
           },
           {
