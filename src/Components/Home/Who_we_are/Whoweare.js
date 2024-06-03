@@ -45,7 +45,7 @@ function WhoweareSection() {
           </div>
 
           <ScrollTrigger onEnter={() => setCounterOn(true)} onExit={() => setCounterOn(false)}>
-            <div className="row">
+            <div className="row ">
               <div className="col-md-5 techcontainer">
                 <div className='row' data-aos="fade-down" data-aos-duration="1000" data-aos-delay="50">
                   <div className='col welogos' onClick={() => setDisShow(true)}>
