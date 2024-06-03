@@ -123,7 +123,7 @@ function Navbar() {
 
 
                 <li className="dropdown countries"><a href="#" className='toggle-dropdown'>
-                  <span className='toggle-dropdown'>Events & News&nbsp; </span> <i className="bi bi-chevron-down toggle-dropdown arrow "></i></a>
+                  <span className='toggle-dropdown'>Events & News&nbsp; </span> <i className="bi bi-chevron-down toggle-dropdown arrow1 " ></i></a>
                   <ul className=''>
                     <div >
                       <NavLink to="/Events&News" activeClassName='active-link' exact>
@@ -141,7 +141,7 @@ function Navbar() {
                 <NavLink to="/Portal" activeClassName='active-link' exact><li><a className="">Portal</a></li></NavLink>
 
                 <li className="dropdown countries"><a href="#" className='toggle-dropdown'>
-                  <span className='toggle-dropdown'>Countries&nbsp;<i className="fa-solid fa-globe"></i> </span> <i className="bi bi-chevron-down toggle-dropdown arrow " style={{ fontSize: '1em' }}></i></a>
+                  <span className='toggle-dropdown'>Country&nbsp;<img src={sl} alt=" Flag" className='flag flagNavbar' /> </span> <i className="bi bi-chevron-down toggle-dropdown arrow " ></i></a>
                   <ul className='container1'>
                     <div class="scrollable-menu flagName">
                       <li><a href="#"><img src={sin} alt=" Flag" className='flag' /> Singapore (HQ)</a></li>

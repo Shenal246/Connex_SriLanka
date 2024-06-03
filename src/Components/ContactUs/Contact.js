@@ -3,6 +3,7 @@ import { useForm } from 'react-hook-form';
 import axios from 'axios';
 import ReCAPTCHA from 'react-google-recaptcha';
 import './Contact.css';
+import mapSL from '../../images/map/mapSL.png';
 
 const Contact = () => {
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
@@ -40,7 +41,7 @@ const Contact = () => {
             </div>
             <div className="row">
                 <div className="col-md inputField" data-aos="fade-down" data-aos-duration="1000" data-aos-delay="50">
-                    <h1 className='h1'>Reach out to us <br /> to let us know how<br /> we can assist you.</h1>
+                    <h1 className='h1'>Reach out to us <br /> to let us know how we can assist you.</h1>
                     <h2 className='h2'>We are happy to provide <br /> customer support or <br />answer any general inquiries <br /> you may have.</h2>
                 </div>
                 <div className="col-md inputField" data-aos="fade-down" dat a-aos-duration="1000" data-aos-delay="50">
@@ -161,7 +162,7 @@ const Contact = () => {
             </div>
 
             <div className="row">
-                <div className="col-md-md-6 countryData">
+                <div className="col-md-6 countryData">
                     <h1 className='countryName address3'>Sri Lanka</h1>
                     <h3>Sri Lankan Office</h3>
                     <p className='txt1'><i className="fas fa-map-marker-alt img3"></i>
@@ -176,9 +177,11 @@ const Contact = () => {
                     >
                         Get Directions
                     </button>
-                    <hr className='line'></hr>
+                    <hr className='line'></hr><hr className='line'></hr>
                 </div>
-                <div className="col-md-md-6">
+                <div className="col-md-6">
+                <img src={mapSL } className='mapSL' />
+
                 </div>
             </div>
         </div>
