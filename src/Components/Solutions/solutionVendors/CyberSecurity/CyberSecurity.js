@@ -19,7 +19,7 @@ function CyberSecurity() {
             key: "Cr6re8VRBm"
         };
 
-        axios.post("http://192.168.13.75:5000/search", values).then((response) => {
+        axios.post("https://bc-niroshmadushans-projects.vercel.app/search", values).then((response) => {
             setVendors(response.data);
         }).catch((err) => {
             console.log(err);
@@ -38,9 +38,9 @@ function CyberSecurity() {
             <div className="container">
                 <div className='row '>
                     <div className="row text headingrow">
-                        <div className="col-4" data-aos="fade-up" data-aos-delay="100"><hr /></div>
-                        <div className="col-4" data-aos="fade-up" data-aos-delay="100"><p id='topic'>Perimeter And Internal Security</p></div>
-                        <div className="col-4" data-aos="fade-up" data-aos-delay="100"><hr /></div>
+                        <div className="col-3" data-aos="fade-up" data-aos-delay="100"><hr /></div>
+                        <div className="col-6" data-aos="fade-up" data-aos-delay="100"><p id='topic'>Cyber Security Governance & Compliance</p></div>
+                        <div className="col-3" data-aos="fade-up" data-aos-delay="100"><hr /></div>
                     </div>
                 </div>
                 <div className="row row-cols-2 row-cols-lg-5 g-2 g-lg-3 rowmargin">

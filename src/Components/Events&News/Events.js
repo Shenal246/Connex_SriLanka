@@ -1,15 +1,16 @@
 import React, { useRef, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import './Events.css';
-import card1 from '../../images/news.png';
 import axios from "axios";
-import Card from 'react-bootstrap/Card';
+import connections from '../../config';
 
 const Events = () => {
     const videoRef = useRef(null);
     const [newsData, setNewsData] = useState([]);
     const [othernewsData, setOtherNewsData] = useState([]);
     const [currentVideoLink, setCurrentVideoLink] = useState(null);
+
+    const serverlink = connections.serverLink;
 
     const handleCloseModal = () => {
         if (videoRef.current) {
@@ -24,23 +25,25 @@ const Events = () => {
 
     useEffect(() => {
         const values = {
-            query: "SELECT title,nlink,newstype_id,status_id FROM news WHERE newstype_id=1 AND status_id=1;",
+            query: "SELECT title,link,type,status,image_data,cnt FROM news WHERE type=2 AND status=1 AND cnt=1;",
             key: "Cr6re8VRBm"
         };
 
-        axios.post("http://192.168.13.75:5000/search", values).then((response) => {
+        axios.post(serverlink, values).then((response) => {
             setNewsData(response.data);
         }).catch((err) => {
             console.log(err);
         });
 
+        // console.log(newsData.image_data);
+
         // For other news
         const values1 = {
-            query: "SELECT title,nlink,newstype_id,status_id FROM news WHERE newstype_id=4 AND status_id=1;",
+            query: "SELECT title,link,type,status,image_data,cnt FROM news WHERE type=7 AND status=1 AND cnt=1;",
             key: "Cr6re8VRBm"
         };
 
-        axios.post("http://192.168.13.75:5000/search", values1).then((response) => {
+        axios.post(serverlink, values1).then((response) => {
             setOtherNewsData(response.data);
         }).catch((err) => {
             console.log(err);
@@ -63,12 +66,24 @@ const Events = () => {
                 <div className='subTopin'>Latest Events & News</div>
             </div>
 
-            <div className="row cards"> 
+            <div className="row cards">
                 {newsData.map((news, index) => (
                     <div className="col-lg-4" key={index}>
-                        <div className="card mb-3 card1 text-light position-relative crd rounded-5" data-bs-toggle="modal" data-bs-target="#videoModal" onClick={() => handleCardClick(news.nlink)}>
+                        <div className="card mb-3 card1 text-light position-relative crd rounded-5" data-bs-toggle="modal" data-bs-target="#videoModal" onClick={() => handleCardClick(news.link)}>
                             <div className="position-relative">
-                                <img src={card1} className="card-img-top image rounded-top-5 opacity-75" alt="ConnexIT Logo" style={{ width: '100%', height: 'auto' }} />
+                                {news.image_data ? (
+                                    <>
+                                        <img
+                                            src={`data:image/jpeg;base64,${news.image_data}`}
+                                            alt={news.title}
+                                            className="card-img-top image rounded-top-5 opacity-75" style={{ width: '100%', height: 'auto' }}
+
+                                        />
+                                    </>
+                                ) : (
+                                    <p>No Image Available</p>
+                                )}
+
                                 <div className="centered">
                                     <Link to="#" className="fa-solid fa-play playicon"></Link>
                                 </div>
@@ -116,9 +131,20 @@ const Events = () => {
             <div className="row cards">
                 {othernewsData.map((news, index) => (
                     <div className="col-lg-4" key={index}>
-                        <div className="card mb-3 card1 text-light position-relative crd rounded-5" data-bs-toggle="modal" data-bs-target="#videoModal" onClick={() => handleCardClick(news.nlink)}>
+                        <div className="card mb-3 card1 text-light position-relative crd rounded-5" data-bs-toggle="modal" data-bs-target="#videoModal" onClick={() => handleCardClick(news.link)}>
                             <div className="position-relative">
-                                <img src={card1} className="card-img-top image rounded-top-5 opacity-75" alt="ConnexIT Logo" style={{ width: '100%', height: 'auto' }} />
+                                {news.image_data ? (
+                                    <>
+                                        <img
+                                            src={`data:image/jpeg;base64,${news.image_data}`}
+                                            alt={news.title}
+                                            className="card-img-top image rounded-top-5 opacity-75" style={{ width: '100%', height: 'auto' }}
+
+                                        />
+                                    </>
+                                ) : (
+                                    <p>No Image Available</p>
+                                )}
                                 <div className="centered">
                                     <Link to="#" className="fa-solid fa-play playicon"></Link>
                                 </div>

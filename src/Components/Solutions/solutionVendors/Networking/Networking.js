@@ -19,7 +19,7 @@ function Networking() {
             key: "Cr6re8VRBm"
         };
 
-        axios.post("http://192.168.13.75:5000/search", values).then((response) => {
+        axios.post("https://bc-niroshmadushans-projects.vercel.app/search", values).then((response) => {
             setVendors(response.data);
         }).catch((err) => {
             console.log(err);
@@ -39,7 +39,7 @@ function Networking() {
                 <div className='row '>
                     <div className="row text headingrow">
                         <div className="col-4" data-aos="fade-up" data-aos-delay="100"><hr /></div>
-                        <div className="col-4" data-aos="fade-up" data-aos-delay="100"><p id='topic'>Perimeter And Internal Security</p></div>
+                        <div className="col-4" data-aos="fade-up" data-aos-delay="100"><p id='topic'>Networking</p></div>
                         <div className="col-4" data-aos="fade-up" data-aos-delay="100"><hr /></div>
                     </div>
                 </div>
