@@ -51,7 +51,7 @@ function CyberSecurity() {
                         <div className="col" key={index}>
 
                             <div class="card h-100" onClick={() => { setShow(true); handleCardClick(vend); }}>
-                            {vend.image_data ? (
+                                {vend.image_data ? (
                                     <>
                                         <img
                                             src={`data:image/jpeg;base64,${vend.image_data}`}
@@ -88,12 +88,12 @@ function CyberSecurity() {
                     <Modal.Body scrollable className='btnBody'>
                         <Row>
                             <p>
-                                {currentVendor && currentVendor.description}
+                                {currentVendor && currentVendor.des}
                             </p>
 
                         </Row>
                         <Row>
-                            <a href={currentVendor && currentVendor.vlink} target='_blank'><Button variant="primary" className='websiteButton'>Visit Website</Button></a>
+                            <a href={currentVendor && currentVendor.wlink} target='_blank'><Button variant="primary" className='websiteButton'>Visit Website</Button></a>
                         </Row>
 
                     </Modal.Body>

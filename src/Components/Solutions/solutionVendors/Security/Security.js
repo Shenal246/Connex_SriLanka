@@ -6,6 +6,7 @@ import axios from "axios";
 import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
 import { Row } from 'react-bootstrap';
+import connections from '../../../../config';
 
 
 function Security() {
@@ -13,13 +14,15 @@ function Security() {
     const [show, setShow] = useState(false);
     const [currentVendor, setCurrentVendor] = useState(null);
 
+    const serverlink = connections.serverLink;
+
     useEffect(() => {
         const values = {
-            query: "SELECT v.name,v.vlink,v.description,v.status,v.img FROM vendor v JOIN vendorpillor vp ON v.id = vp.vendor_id WHERE v.status=1 AND vp.pillor_id=4;",
+            query: "SELECT name,des,wlink,status,image_data,cnt,Security_Management FROM Vendor WHERE Security_Management='true' AND status=1 AND cnt=1;",
             key: "Cr6re8VRBm"
         };
 
-        axios.post("https://bc-niroshmadushans-projects.vercel.app/search", values).then((response) => {
+        axios.post(serverlink, values).then((response) => {
             setVendors(response.data);
         }).catch((err) => {
             console.log(err);
@@ -48,7 +51,18 @@ function Security() {
                         <div className="col" key={index}>
 
                             <div class="card h-100" onClick={() => { setShow(true); handleCardClick(vend); }}>
-                                <img src={ven1} class="card-img-top" alt="..." />
+                                {vend.image_data ? (
+                                    <>
+                                        <img
+                                            src={`data:image/jpeg;base64,${vend.image_data}`}
+                                            alt={vend.title}
+                                            className="card-img-top"
+
+                                        />
+                                    </>
+                                ) : (
+                                    <p>No Image Available</p>
+                                )}
                                 <div class="card-body">
                                     <h5 class="card-title vendorTitel">{vend.name}</h5>
                                 </div>
@@ -74,12 +88,12 @@ function Security() {
                     <Modal.Body scrollable className='btnBody'>
                         <Row>
                             <p>
-                                {currentVendor && currentVendor.description}
+                                {currentVendor && currentVendor.des}
                             </p>
 
                         </Row>
                         <Row>
-                            <a href={currentVendor && currentVendor.vlink} target='_blank'><Button variant="primary" className='websiteButton'>Visit Website</Button></a>
+                            <a href={currentVendor && currentVendor.wlink} target='_blank'><Button variant="primary" className='websiteButton'>Visit Website</Button></a>
                         </Row>
 
                     </Modal.Body>

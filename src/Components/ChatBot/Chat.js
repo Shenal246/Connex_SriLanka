@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import './Chat.css';
 import ChatBot from 'react-simple-chatbot';
-import Botpic from '../../images/support.png';
+import Botpic from '../../images/chatprof.png';
 import axios from "axios";
 
 function Chat() {
