@@ -15,7 +15,7 @@
 }
 
 .cardSize {
-  height: 70px;
+  height: 100px;
 }
 
 .crd {
@@ -30,6 +30,11 @@
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
   opacity:calc(1);
 }
+
+.datacenter{
+  height: 207px;
+}
+
 
 #topic {
   text-align: center;
@@ -57,7 +62,7 @@
 }
 
 .txts{
-  font-size: large;
+  font-size: 20px;
   font: bold;
-  font-weight: 500;
+  font-weight: 600;
 }
