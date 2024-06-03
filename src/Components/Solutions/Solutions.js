@@ -24,9 +24,9 @@ function Solutions() {
           <div className="col">
             <NavLink to="/Solutions/InternetSecurity" activeClassName='active-link'>
               <div className="card crd">
-                <img src={Perimie} className="card-img-top" alt="Perimeter and Internal Security" />
+                <img src={Perimie} className="card-img-top " alt="Perimeter and Internal Security" />
                 <div className="card-body cardSize">
-                  <p className="card-text txts">Perimeter and Internal Security</p>
+                  <p className="card-text txts">Perimeter and <br/> Internal Security</p>
                 </div>
               </div>
             </NavLink>
@@ -36,7 +36,7 @@ function Solutions() {
               <div className="card crd">
                 <img src={cyber} className="card-img-top" alt="Cyber Security Governance & Compliance" />
                 <div className="card-body cardSize">
-                  <p className="card-text txts">Cyber Security Governance & Compliance</p>
+                  <p className="card-text txts">Cyber Security Governance <br/>  & Compliance</p>
                 </div>
               </div>
             </NavLink>
@@ -56,7 +56,7 @@ function Solutions() {
               <div className="card crd">
                 <img src={Security} className="card-img-top" alt="Security Management" />
                 <div className="card-body cardSize">
-                  <p className="card-text txts">Security Management</p>
+                  <p className="card-text txts">Security <br/>  Management</p>
                 </div>
               </div>
             </NavLink>
@@ -66,7 +66,7 @@ function Solutions() {
               <div className="card crd">
                 <img src={datapoint} className="card-img-top" alt="Endpoint Security" />
                 <div className="card-body cardSize">
-                  <p className="card-text txts">Endpoint Security</p>
+                  <p className="card-text txts">Endpoint <br/>  Security</p>
                 </div>
               </div>
             </NavLink>
@@ -84,7 +84,7 @@ function Solutions() {
           <div className="col">
             <NavLink to="/Solutions/Infrastructure" activeClassName='active-link'>
               <div className="card crd">
-                <img src={endpoint} className="card-img-top" alt="Data Center Infrastructure and Infrastructure Monitoring" />
+                <img src={endpoint} className="card-img-top datacenter" alt="Data Center Infrastructure and Infrastructure Monitoring" />
                 <div className="card-body cardSize">
                   <p className="card-text txts">Data Center Infrastructure and Infrastructure Monitoring</p>
                 </div>
