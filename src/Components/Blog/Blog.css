@@ -13,6 +13,10 @@
 color: rgb(34, 205, 205) !important;
 }
 
+.modal{
+    padding-top: 100px;
+}
+
 @media(max-width: 675px){
     .cards{
         margin: 10px; /* Add margin to cards for better spacing */
