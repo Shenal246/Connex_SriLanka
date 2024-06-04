@@ -8,28 +8,28 @@ function Chat() {
   const [responses, setResponses] = useState([]);
   const chatBotRef = useRef(null);
 
-
-  // Handle chat end
   const handleEnd = async ({ values }) => {
     console.log(values);
 
-    const value1 = values[0];
-    const value2 = values[1];
-    const value3 = values[2];
+    const name= values[0];
+     const problem= values[1];
+     const tpno= values[2];
+   
+    const value3 = {
+      query: "INSERT INTO chat(name, problem, tpno) VALUES (?,?,?)",
+      value1:name,
+      value2:problem,
+      value3:tpno,
+      key: "FKoaDwCi7C"
+  };
 
-    const valuess = {
-      query: "INSERT INTO chat (name, problem, tpno) values(?,?,?);",
-      value1: value1,
-      value2: value2,
-      value3: value3,
-      key: "Cr6re8VRBm"
-    };
-
-    await axios.post("https://bc-niroshmadushans-projects.vercel.app/insert", valuess).then((response) => {
-      // Handle response if needed
-    }).catch((err) => {
-      console.log(err);
-    });
+    await axios.post("http://192.168.13.75:3001/insert", value3)
+      .then((response) => {
+        // Handle response if needed
+      })
+      .catch((err) => {
+        console.log(err);
+      });
 
     setResponses(values);
   };
@@ -50,11 +50,10 @@ function Chat() {
 
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
-  // Change image every 5 minutes
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
-    }, 500000); // 300000ms = 5 minutes
+    }, 500000); // 500000ms = 5 minutes
 
     return () => clearInterval(interval); // Cleanup the interval on component unmount
   }, [images.length]);
@@ -103,7 +102,6 @@ function Chat() {
         handleEnd={handleEnd}
         className="custom-chatbot"
         botAvatar={Botpic}
-        // userAvatar="path/to/your/user/avatar.png"
         headerTitle="Kiara"
       />
       <div className="online-dot"></div>
