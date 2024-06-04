@@ -16,7 +16,8 @@ import EndpointSecurity from '../Solutions/solutionVendors/Endpoint/Endpoin';
 import Networking from '../Solutions/solutionVendors/Networking/Networking';
 import Infrastructure from '../Solutions/solutionVendors/Infrastructure/InfrastructureMonitoring';
 import Server from '../Solutions/solutionVendors/ServerBackup/ServerBackup';
-import Portal from '../Portal/Portal'
+import Portal from '../Portal/Portal';
+import Blog from '../Blog/Blog';
 
 import sin from '../../images/FlagIcon/singapore.png';
 import aus from '../../images/FlagIcon/australia.png';
@@ -123,7 +124,7 @@ function Navbar() {
 
 
                 <li className="dropdown countries"><a href="#" className='toggle-dropdown'>
-                  <span className='toggle-dropdown'>Events & News&nbsp; </span> <i className="bi bi-chevron-down toggle-dropdown arrow1 " ></i></a>
+                  <span className='toggle-dropdown'>Events&nbsp; </span> <i className="bi bi-chevron-down toggle-dropdown arrow1 " ></i></a>
                   <ul className=''>
                     <div >
                       <NavLink to="/Events&News" activeClassName='active-link' exact>
@@ -132,7 +133,9 @@ function Navbar() {
                       <NavLink to="/UpcomingNews" activeClassName='active-link' exact>
                         <a>Upcoming News</a>
                       </NavLink>
-
+                      <NavLink to="/Blog" activeClassName='active-link' exact>
+                        <a>Blogs</a>
+                      </NavLink>
 
                     </div>
                   </ul>
@@ -144,20 +147,21 @@ function Navbar() {
                   <span className='toggle-dropdown'>Country&nbsp;<img src={sl} alt=" Flag" className='flag flagNavbar' /> </span> <i className="bi bi-chevron-down toggle-dropdown arrow " ></i></a>
                   <ul className='container1'>
                     <div class="scrollable-menu flagName">
-                      <li><a href="#"><img src={sin} alt=" Flag" className='flag' /> Singapore (HQ)</a></li>
+                      
                       <li><a href="#"><img src={aus} alt=" Flag" className='flag' /> Australia</a></li>
                       <li><a href="#"><img src={ban} alt=" Flag" className='flag' /> Bangladesh</a></li>
                       <li><a href="#"><img src={bru} alt=" Flag" className='flag' />Brunei</a></li>
-                      <li><a href="#"><img src={cam} alt=" Flag" className='flag' />Cambodia</a></li>
-                      <li><a href="#"><img src={wor} alt=" Flag" className='flag' />UAE</a></li>
+                      <li><a href="#"><img src={cam} alt=" Flag" className='flag' />Cambodia</a></li>                  
                       <li><a href="#"><img src={ind} alt=" Flag" className='flag' />India</a></li>
                       <li><a href="#"><img src={laos} alt=" Flag" className='flag' />Laos</a></li>
                       <li><a href="#"><img src={mld} alt=" Flag" className='flag' />Maldives</a></li>
                       <li><a href="#"><img src={myn} alt=" Flag" className='flag' />Myanmar</a></li>
                       <li><a href="#"><img src={mrt} alt=" Flag" className='flag' />Mauritius</a></li>
+                      <li><a href="#"><img src={sin} alt=" Flag" className='flag' /> Singapore</a></li>
                       {/* <li><a href="#"><img src={sl} alt=" Flag" className='flag' />Sri Lanka</a></li> */}
                       <li><a href="#"><img src={tnz} alt=" Flag" className='flag' />Tanzania</a></li>
                       <li><a href="#"><img src={tld} alt=" Flag" className='flag' />Thailand</a></li>
+                      <li><a href="#"><img src={wor} alt=" Flag" className='flag' />UAE</a></li>
                     </div>
                   </ul>
                 </li>
@@ -177,6 +181,7 @@ function Navbar() {
           <Route path="/About" exact Component={About}></Route>
           <Route path="/Events&News" exact element={<Events />}></Route>
           <Route path="/UpcomingNews" exact element={<UpcomingEvents />}></Route>
+          <Route path="/Blog" exact element={<Blog />}></Route>
           <Route path="/ContactUs" exact Component={ContactUs}></Route>
           <Route path="/Solutions" exact Component={Solutions}></Route>
           <Route path="/Portal" exact Component={Portal}></Route>

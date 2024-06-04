@@ -1,0 +1,11 @@
+.blogimg{
+    padding: 4px;
+    border-radius: 20px;
+    margin-left: -10px;
+}
+
+@media(max-width: 675px){
+    .cards{
+      
+    }
+}
