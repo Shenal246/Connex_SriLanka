@@ -17,7 +17,7 @@ function Endpoint() {
 
     useEffect(() => {
         const values = {
-            query: "SELECT name,des,wlink,status,image_data,cnt,Cyber_Security_Governance_Compliance FROM Vendor WHERE Cyber_Security_Governance_Compliance='true' AND status=1 AND cnt=1;",
+            query: "SELECT name,des,wlink,status,image_data,cnt,Endpoint_Security FROM Vendor WHERE Endpoint_Security='true' AND status=1 AND cnt=1;",
             key: "Cr6re8VRBm"
         };
 
@@ -51,7 +51,7 @@ function Endpoint() {
                         <div className="col" key={index}>
 
                             <div class="card h-100" onClick={() => { setShow(true); handleCardClick(vend); }}>
-                            {vend.image_data ? (
+                                {vend.image_data ? (
                                     <>
                                         <img
                                             src={`data:image/jpeg;base64,${vend.image_data}`}
