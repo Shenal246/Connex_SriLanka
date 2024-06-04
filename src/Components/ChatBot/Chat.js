@@ -104,7 +104,7 @@ function Chat() {
         className="custom-chatbot"
         botAvatar={Botpic}
         // userAvatar="path/to/your/user/avatar.png"
-        headerTitle="ConnBot"
+        headerTitle="Kiara"
       />
       <div className="online-dot"></div>
     </div>

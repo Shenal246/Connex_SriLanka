@@ -1,23 +1,35 @@
 import './Hero.css';
 import Logo from '../../../images/hero.png';
-import React, { useRef } from 'react';
+import React, { useRef, useEffect } from 'react';
 import { NavLink } from "react-router-dom";
-// import vid1 from '../../Events&News/Video/videoplayback.mp4';
 
 function HeroSection() {
-  const videoRef = useRef(null); // Create a ref for the video element
+  const iframeRef = useRef(null); // Create a ref for the iframe element
 
   const handlePlayVideo = () => {
-    if (videoRef.current) {
-      videoRef.current.play(); // Play the video
+    if (iframeRef.current) {
+      const src = iframeRef.current.src;
+      iframeRef.current.src = src + "&autoplay=1"; // Play the video
     }
   };
 
   const handleCloseModal = () => {
-    if (videoRef.current) {
-      videoRef.current.pause(); // Pause the video
+    if (iframeRef.current) {
+      const src = iframeRef.current.src;
+      iframeRef.current.src = src.replace("&autoplay=1", ""); // Stop the video
     }
   };
+
+  useEffect(() => {
+    // Add event listener for modal close
+    const modal = document.getElementById('videoModal');
+    modal.addEventListener('hidden.bs.modal', handleCloseModal);
+
+    // Cleanup event listener on component unmount
+    return () => {
+      modal.removeEventListener('hidden.bs.modal', handleCloseModal);
+    };
+  }, []);
 
   return (
     <section id="hero" className="section hero">
@@ -47,14 +59,23 @@ function HeroSection() {
         </div>
       </div>
 
-      <div className="modal fade" id="videoModal" tabIndex="-1" aria-labelledby="videoModalLabel" aria-hidden="true" onClick={handleCloseModal}>
+      <div className="modal fade" id="videoModal" tabIndex="-1" aria-labelledby="videoModalLabel" aria-hidden="true">
         <div className="modal-dialog modal-dialog-centered modal-xl">
           <div className="modal-content modalClr">
             <div className="modal-header">
               <button type="button" className="btn-close close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div className="modal-body">
-            <iframe className='video'  src="https://www.youtube.com/embed/FCe1vPuB954?si=5cqHj3a1AtVZqFcN" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+              <iframe 
+                className='video' 
+                src="https://www.youtube.com/embed/FCe1vPuB954?si=5cqHj3a1AtVZqFcN" 
+                title="YouTube video player" 
+                frameBorder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                referrerPolicy="strict-origin-when-cross-origin" 
+                allowFullScreen 
+                ref={iframeRef}
+              ></iframe>
             </div>
           </div>
         </div>
