@@ -6,45 +6,58 @@ import axios from "axios";
 import { NavLink } from "react-router-dom";
 
 import Latest1 from '../../../images/Latest/1.png';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import connections from '../../../config';
 
 const Latest = () => {
+    const videoRef = useRef(null);
     const [latestOne, setLatestOne] = useState(null);
     const [latestTwo, setLatestTwo] = useState(null);
     const [latestThree, setLatestThree] = useState(null);
     const [latestFour, setLatestFour] = useState(null);
+    const [currentVideoLink, setCurrentVideoLink] = useState(null);
 
     const serverlink = connections.serverLink;
 
-    useEffect(() => {
+    const handleCloseModal = () => {
+        if (videoRef.current) {
+            videoRef.current.pause();
+        }
+        setCurrentVideoLink(null);
+    };
+
+    const handleCardClick = (nlink) => {
+        setCurrentVideoLink(nlink);
+    };
+
+    const fetchNews = async () => {
         // Latest One
         const values = {
-            query: "SELECT title,link,type,status,image_data,cnt FROM news WHERE status=1 AND cnt=1 AND type=3;",
+            query: "SELECT title,link,type,status,image_data,cnt FROM news WHERE type=3 AND status=1 AND cnt=1;",
             key: "Cr6re8VRBm"
         };
 
-        axios.post(serverlink, values).then((response) => {
-            setLatestOne(response.data);
+        await axios.post(serverlink, values).then((response) => {
+            setLatestOne(response.data[0]);
         }).catch((err) => {
             console.log(err);
         });
 
         // Latest Two
         const value2 = {
-            query: "SELECT title,link,type,status,image_data,cnt FROM news WHERE status=1 AND cnt=1 AND type=4;",
+            query: "SELECT title,link,type,status,image_data,cnt FROM news WHERE type=4 AND status=1 AND cnt=1;",
             key: "Cr6re8VRBm"
         };
 
         axios.post(serverlink, value2).then((response) => {
-            setLatestTwo(response.data);
+            setLatestTwo(response.data[0]);
         }).catch((err) => {
             console.log(err);
         });
 
         // Latest Three
         const value3 = {
-            query: "SELECT title,link,type,status,image_data,cnt FROM news WHERE status=1 AND cnt=1 AND type=5;",
+            query: "SELECT title,link,type,status,image_data,cnt FROM news WHERE type=5 AND status=1 AND cnt=1;",
             key: "Cr6re8VRBm"
         };
 
@@ -56,7 +69,7 @@ const Latest = () => {
 
         // Latest One
         const value4 = {
-            query: "SELECT title,link,type,status,image_data,cnt FROM news WHERE status=1 AND cnt=1 AND type=6;",
+            query: "SELECT title,link,type,status,image_data,cnt FROM news WHERE type=6 AND status=1 AND cnt=1;",
             key: "Cr6re8VRBm"
         };
 
@@ -66,6 +79,10 @@ const Latest = () => {
             console.log(err);
         });
 
+    };
+
+    useEffect(() => {
+        fetchNews();
     }, []);
 
     return (
@@ -81,12 +98,30 @@ const Latest = () => {
                     <div className="col-md-6" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="50">
                         {/* first image of the first column */}
                         <div className="mb-2">
-                            <Card className='cardContainer1'>
-                                <Card.Img variant="top" src={latestOne && latestOne.image_data} className='image1' />
-                                <Card.Body className='cardBody'>
-                                    <Card.Title>{latestOne && latestTwo.title}</Card.Title>
-                                </Card.Body>
-                            </Card>
+
+                            {/* Card1 */}
+                            <div className="cardContainer1 card" data-bs-toggle="modal" data-bs-target="#videoModal" onClick={() => handleCardClick(latestOne.link)}>
+                                {latestOne && latestOne.image_data ? (
+                                    <>
+                                        <img
+                                            src={`data:image/jpeg;base64,${latestOne && latestOne.image_data}`}
+                                            alt={latestOne.title}
+                                            className='image1'
+
+                                        />
+                                    </>
+                                ) : (
+                                    <p>No Image Available</p>
+                                )}
+
+                                <div className="card-body cardBody">
+
+                                    <div className="row">
+                                        <h5 className="card-title">{latestOne && latestOne.title}</h5>
+                                    </div>
+                                </div>
+                            </div>
+
                         </div>
                     </div>
 
@@ -94,12 +129,27 @@ const Latest = () => {
                     <div className="col-md-5" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="50">
                         <div className='row'>
                             <div className="mb-2">
-                                <Card className='cardContainer2'>
-                                    <Card.Img variant="top" src={Latest1} className='image2' />
-                                    <Card.Body className='cardBody2'>
-                                        <Card.Title>Card Title 2</Card.Title>
-                                    </Card.Body>
-                                </Card>
+                                <div className="cardContainer2 card" data-bs-toggle="modal" data-bs-target="#videoModal" onClick={() => handleCardClick(latestTwo.link)}>
+                                    {latestTwo && latestTwo.image_data ? (
+                                        <>
+                                            <img
+                                                src={`data:image/jpeg;base64,${latestTwo && latestTwo.image_data}`}
+                                                alt={latestTwo.title}
+                                                className='image2'
+
+                                            />
+                                        </>
+                                    ) : (
+                                        <p className='AltText'>No News Available</p>
+                                    )}
+
+                                    <div className="card-body cardBody">
+
+                                        <div className="row">
+                                            <h5 className="card-title">{latestTwo && latestTwo.title}</h5>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
 
@@ -108,23 +158,53 @@ const Latest = () => {
                                 <div className="col-md-6">
                                     {/* First image of the Second column second row */}
                                     <div className="mb-2">
-                                        <Card className='cardContainer2'>
-                                            <Card.Img variant="top" src={Latest1} className='image2' />
-                                            <Card.Body className='cardBody2'>
-                                                <Card.Title>Card Title 3</Card.Title>
-                                            </Card.Body>
-                                        </Card>
+                                        <div className="cardContainer2 card" data-bs-toggle="modal" data-bs-target="#videoModal" onClick={() => handleCardClick(latestThree.link)}>
+                                            {latestThree && latestThree.image_data ? (
+                                                <>
+                                                    <img
+                                                        src={`data:image/jpeg;base64,${latestThree && latestThree.image_data}`}
+                                                        alt={latestThree.title}
+                                                        className='image2'
+
+                                                    />
+                                                </>
+                                            ) : (
+                                                <p className='AltText'>No Image Available</p>
+                                            )}
+
+                                            <div className="card-body cardBody2">
+
+                                                <div className="row">
+                                                    <h5 className="card-title">{latestThree && latestThree.title}</h5>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                                 <div className="col-md-6">
                                     {/* Second image of the Second column second row */}
                                     <div className="mb-2">
-                                        <Card className='cardContainer2'>
-                                            <Card.Img variant="top" src={Latest1} className='image2' />
-                                            <Card.Body className='cardBody2'>
-                                                <Card.Title>Card Title 4</Card.Title>
-                                            </Card.Body>
-                                        </Card>
+                                        <div className="cardContainer2 card" data-bs-toggle="modal" data-bs-target="#videoModal" onClick={() => handleCardClick(latestFour.link)}>
+                                            {latestFour && latestFour.image_data ? (
+                                                <>
+                                                    <img
+                                                        src={`data:image/jpeg;base64,${latestFour && latestFour.image_data}`}
+                                                        alt={latestFour.title}
+                                                        className='image2'
+
+                                                    />
+                                                </>
+                                            ) : (
+                                                <p className='AltText'>No Image Available</p>
+                                            )}
+
+                                            <div className="card-body cardBody2">
+
+                                                <div className="row">
+                                                    <h5 className="card-title">{latestFour && latestFour.title}</h5>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -138,6 +218,31 @@ const Latest = () => {
                                 <BsArrowRight size={30} />
                             </Button></NavLink>
 
+                        </div>
+                    </div>
+
+                    {/* Modal */}
+                    <div className="modal fade" id="videoModal" tabIndex="-1" aria-labelledby="videoModalLabel" aria-hidden="true" onClick={handleCloseModal}>
+                        <div className="modal-dialog modal-dialog-centered modal-xl">
+                            <div className="modal-content modalClr">
+                                <div className="modal-header">
+                                    <button type="button" className="btn-close close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div className="modal-body">
+                                    {currentVideoLink && (
+                                        <iframe
+                                            width="1100"
+                                            height="500"
+                                            src={currentVideoLink && currentVideoLink}
+                                            title="Video Player"
+                                            frameBorder="0"
+                                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                            referrerPolicy="strict-origin-when-cross-origin"
+                                            allowFullScreen
+                                        ></iframe>
+                                    )}
+                                </div>
+                            </div>
                         </div>
                     </div>
 
