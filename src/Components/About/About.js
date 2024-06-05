@@ -1,5 +1,5 @@
 import React from 'react';
-import headlogo from '../../images/about-page-img2.png'
+import headlogo from '../../images/about-page-img2-min.png'
 import arrowleft from '../../images/icons8-triangle-64.png'
 import './About.css';
 import "slick-carousel/slick/slick.css";
