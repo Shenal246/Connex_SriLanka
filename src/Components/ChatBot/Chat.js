@@ -1,7 +1,9 @@
 import React, { useState, useEffect, useRef } from 'react';
 import './Chat.css';
 import ChatBot from 'react-simple-chatbot';
-import Botpic from '../../images/chatprof.png';
+import Botpic1 from '../../images/Chat/chat1.jpg';
+import Botpic2 from '../../images/Chat/chat2.jpg';
+import Botpic3 from '../../images/Chat/chat3.jpg';
 import axios from "axios";
 
 function Chat() {
@@ -11,17 +13,19 @@ function Chat() {
   const handleEnd = async ({ values }) => {
     console.log(values);
 
-    const name= values[0];
-     const problem= values[1];
-     const tpno= values[2];
-   
+    const name = values[0];
+    const problem = values[1];
+    const tpno = values[2];
+
     const value3 = {
-      query: "INSERT INTO chat(name, problem, tpno) VALUES (?,?,?)",
-      value1:name,
-      value2:problem,
-      value3:tpno,
+      query: "INSERT INTO chat(name, problem, tpno,countryid,statusid) VALUES (?,?,?,?,?)",
+      value1: name,
+      value2: problem,
+      value3: tpno,
+      value4: 1,
+      value5: 1,
       key: "FKoaDwCi7C"
-  };
+    };
 
     await axios.post("http://192.168.13.75:3001/insert", value3)
       .then((response) => {
@@ -44,19 +48,21 @@ function Chat() {
     return () => clearTimeout(timer); // Cleanup the timer on component unmount
   }, []);
 
-  const images = [
-    Botpic, Botpic
-  ];
-
+  const images = [Botpic1, Botpic2, Botpic3];
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [botAvatar, setBotAvatar] = useState(images[0]);
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
-    }, 500000); // 500000ms = 5 minutes
+      setCurrentImageIndex((prevIndex) => {
+        const newIndex = (prevIndex + 1) % images.length;
+        setBotAvatar(images[newIndex]);
+        return newIndex;
+      });
+    }, 5000); // 5000ms = 5 seconds
 
     return () => clearInterval(interval); // Cleanup the interval on component unmount
-  }, [images.length]);
+  }, [images]);
 
   return (
     <div ref={chatBotRef} className="chat-container" style={{ '--floating-button-image': `url(${images[currentImageIndex]})` }}>
@@ -101,7 +107,7 @@ function Chat() {
         floating={true}
         handleEnd={handleEnd}
         className="custom-chatbot"
-        botAvatar={Botpic}
+        botAvatar={botAvatar}
         headerTitle="Kiara"
       />
       <div className="online-dot"></div>

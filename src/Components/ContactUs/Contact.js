@@ -1,34 +1,56 @@
 import React, { useRef, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import axios from 'axios';
-import ReCAPTCHA from 'react-google-recaptcha';
+// import ReCAPTCHA from 'react-google-recaptcha';
 import './Contact.css';
 import mapSL from '../../images/map/mapSL.png';
 
 const Contact = () => {
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
     const formRef = useRef();
-    const [isHuman, setIsHuman] = useState(false);
-    const recaptchaRef = useRef();
+    // const [isHuman, setIsHuman] = useState(false);
+    // const recaptchaRef = useRef();
 
     const onSubmit = async (data) => {
-        if (!isHuman) {
-            alert('Please verify that you are a human!');
-            return;
-        }
+        // if (!isHuman) {
+        //     alert('Please verify that you are a human!');
+        //     return;
+        // }
+
+        const values = [data.firstName, data.lastName, data.Company, data.contactNumber, data.email, data.comments];
+
+        const value33 = {
+            query: "INSERT INTO contactus(firstname, lastname, company, tpno,email,comment,countryid,statusid) VALUES (?,?,?,?,?,?,?,?)",
+            value1: values[0],
+            value2: values[1],
+            value3: values[2],
+            value4: values[3],
+            value5: values[4],
+            value6: values[5],
+            value7: 1,
+            value8: 1,
+            key: "FKoaDwCi7C"
+        };
+
+        console.log(value33);
 
         try {
-            const response = await axios.post('http://localhost:5000/send-email', data);
-            console.log(response.data);
-            reset();
+            const response = await axios.post("http://192.168.13.75:3001/insert", value33);
+            if (response.status === 200) {
+                alert('Form submitted successfully!');
+                reset();
+            } else {
+                alert('Failed to submit the form.');
+            }
         } catch (error) {
-            console.error('Error sending email:', error);
+            console.error('Error submitting the form', error);
+            alert('An error occurred while submitting the form.');
         }
     };
 
-    const handleRecaptchaChange = (value) => {
-        setIsHuman(!!value);
-    };
+    // const handleRecaptchaChange = (value) => {
+    //     setIsHuman(!!value);
+    // };
 
     return (
         <div className="container">
@@ -44,7 +66,7 @@ const Contact = () => {
                     <h1 className='h1'>Reach out to us <br /> to let us know how we can assist you.</h1>
                     <h2 className='h2'>We are happy to provide <br /> customer support or <br />answer any general inquiries <br /> you may have.</h2>
                 </div>
-                <div className="col-md inputField" data-aos="fade-down" dat a-aos-duration="1000" data-aos-delay="50">
+                <div className="col-md inputField" data-aos="fade-down" data-aos-duration="1000" data-aos-delay="50">
                     <form ref={formRef} onSubmit={handleSubmit(onSubmit)}>
                         <div className="form-floating col-md-mb-2">
                             <div className="row mt-4 mb-2">
@@ -142,13 +164,13 @@ const Contact = () => {
                             {errors.acceptTerms && <span className="text-danger">You must accept the privacy & policy</span>}
                         </div>
 
-                        <div className="mt-3">
+                        {/* <div className="mt-3">
                             <ReCAPTCHA
                                 ref={recaptchaRef}
                                 sitekey="YOUR_RECAPTCHA_SITE_KEY"
                                 onChange={handleRecaptchaChange}
                             />
-                        </div>
+                        </div> */}
                         <div className="row mt-4 btnContainer">
                             <div className="col-md-6 mb-2">
                                 <button type="submit" className="btn btn-success">Submit</button>
@@ -171,8 +193,8 @@ const Contact = () => {
                         <span className='address'>Colombo 00300,</span><br />
                         <span className='address'>Sri Lanka</span>
                     </p>
-                    <button 
-                        className="neon-button" 
+                    <button
+                        className="neon-button"
                         onClick={() => window.open('https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.8378227416442!2d79.84946567448274!3d6.909986818552493!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae25965c4fa5a01%3A0x2773f36f89729e4e!2sConnex%20Information%20Technologies%20(Pvt)%20Ltd.!5e0!3m2!1sen!2slk!4v1715597396485!5m2!1sen!2slk')}
                     >
                         Get Directions
@@ -180,7 +202,7 @@ const Contact = () => {
                     <hr className='line'></hr><hr className='line'></hr>
                 </div>
                 <div className="col-md-6">
-                <img src={mapSL } className='mapSL' />
+                    <img src={mapSL} className='mapSL' />
 
                 </div>
             </div>
