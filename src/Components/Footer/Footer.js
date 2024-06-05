@@ -28,12 +28,12 @@ const Footer = () => {
                         </div>
                         <div className="col-md-6 col-lg-4  ft-2 resources">
                             <h3>Resources</h3>
-                            <ul>
+                            <ul className='nav-item1'>
                                 <li className="nav-item">
-                                    <a className="" href="/">Events & News</a>
+                                    <a className="" href="/Events&News">Events & News</a>
                                 </li>
                                 <li className="nav-item">
-                                    <a className="" href="/">FAQs</a>
+                                    <a className="" href="/FAQs">FAQs</a>
                                 </li>
                                 <li className="nav-item">
                                     <a className="" href="/">Careers</a>
