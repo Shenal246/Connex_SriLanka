@@ -74,8 +74,8 @@ function WhoweareSection() {
               <div className="col-md-6 d-flex flex-column justify-content-center textarea" data-aos="fade-down" data-aos-duration="1000" data-aos-delay="50">
 
                 <div className="row" id='whText'>
-                  <h3 className='h3'>A decade of expertise in cutting-edge technology distribution</h3>
-                  <p >A leading technology distributor thrives on adapting to the ever-changing world. If you require diverse solutions to achieve compliance and transform your business, your search ends here.</p>
+                  <p className='tx1'>A decade of expertise in cutting-edge technology distribution</p>
+                  <p className='tx2p'>A leading technology distributor thrives on adapting to the ever-changing world. If you require diverse solutions to achieve compliance and transform your business, your search ends here.</p>
                 </div>
 
 
