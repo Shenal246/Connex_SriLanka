@@ -86,7 +86,7 @@ function Perimia() {
                     </Modal.Header>
                     <Modal.Body scrollable className='btnBody'>
                         <Row>
-                            <p>
+                            <p className='pdes'>
                                 {currentVendor && currentVendor.des}
                             </p>
 

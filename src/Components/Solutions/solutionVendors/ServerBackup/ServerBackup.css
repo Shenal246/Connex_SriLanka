@@ -18,3 +18,12 @@
 .btnBody {
     text-align: center;
 }
+/* 
+.card-img-top {
+    padding: 10px !important;
+    width: 200px !important;
+} */
+
+.pdes {
+    text-align: justify;
+}
