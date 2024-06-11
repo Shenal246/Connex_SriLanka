@@ -18,6 +18,7 @@ import Infrastructure from '../Solutions/solutionVendors/Infrastructure/Infrastr
 import Server from '../Solutions/solutionVendors/ServerBackup/ServerBackup';
 import Portal from '../Portal/Portal';
 import Blog from '../Blog/Blog';
+import FAQs from '../FAQs/FAQs'
 
 import sin from '../../images/FlagIcon/singapore.png';
 import aus from '../../images/FlagIcon/australia.png';
@@ -194,6 +195,7 @@ function Navbar() {
           <Route path="/Solutions/Networking" element={<Networking />} />
           <Route path="/Solutions/Infrastructure" element={<Infrastructure />} />
           <Route path="/Solutions/Server" element={<Server />} />
+          <Route path="/FAQs" element={<FAQs />} />
 
 
 

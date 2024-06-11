@@ -225,3 +225,28 @@ hr {
     /* margin-bottom: 40px !important; */
     font-size: 40px !important;
 }
+
+.tx1 {
+    /* margin-bottom: 40px !important; */
+    font-size: 38px;
+    color: white;
+    font-weight: 400 !important;
+    margin-bottom: 0;
+    margin-top: 0;
+}
+@media (max-width: 1390px) {
+    .tx1 {
+        /* margin-bottom: 40px !important; */
+        font-size: 32px !important;
+        color: white;
+        font-weight: 400 !important;
+        margin-bottom: 0;
+        margin-top: 0;
+    }
+
+    .tx2p{
+        font-size: 20px !important;
+        margin-bottom: 0px;
+    }
+
+}
