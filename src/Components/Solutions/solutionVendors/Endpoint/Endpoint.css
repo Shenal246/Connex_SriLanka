@@ -21,4 +21,8 @@
 
 .pdes {
     text-align: justify;
+    white-space: pre-wrap;
+    /* Preserves whitespace and line breaks */
+    word-wrap: break-word;
+    padding-bottom: 50px;
 }
