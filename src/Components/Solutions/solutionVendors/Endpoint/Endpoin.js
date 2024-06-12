@@ -87,9 +87,9 @@ function Endpoint() {
                     </Modal.Header>
                     <Modal.Body scrollable className='btnBody'>
                         <Row>
-                            <p className='pdes'>
+                            <div className='pdes'>
                                 {currentVendor && currentVendor.des}
-                            </p>
+                            </div>
 
                         </Row>
                         <Row>
