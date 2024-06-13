@@ -30,7 +30,7 @@ const Blog = () => {
                                     <div className="card-body">
                                         <h3 className="card-title">Why SMBs Can Finally Breathe Easy: Palo Alto Networks NGFWs Now Within Reach</h3>
                                         <br />
-                                        <h5 className="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer. Sudu parawi raana see piyasalaaa, pasala nimawee yowun kumariyannn</h5>
+                                        <h5 className="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer. Content to be continued</h5>
                                         <button className="btn btn-info read-more" onClick={() => setLgShow(true)}>Read More</button>
                                     </div>
                                 </div>
