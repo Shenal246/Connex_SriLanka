@@ -92,7 +92,7 @@ const SingleVendor = () => {
 
                         <div className='productNames'>
                             
-                            
+                           
                         </div>
                         
                     </div>
