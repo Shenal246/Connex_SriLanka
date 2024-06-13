@@ -72,31 +72,9 @@ function Perimia() {
                     ))}
                 </div>
 
-                <Modal
-                    show={show}
-                    onHide={() => setShow(false)}
-                    aria-labelledby="example-custom-modal-styling-title"
-                    size='xl'
 
-                >
-                    <Modal.Header closeButton closeVariant='white' className='modelHeader'>
-                        <Modal.Title id="example-custom-modal-styling-title">
-                            {currentVendor && currentVendor.name}
-                        </Modal.Title>
-                    </Modal.Header>
-                    <Modal.Body scrollable className='btnBody'>
-                        <Row>
-                            <p className='pdes'>
-                                {currentVendor && currentVendor.des}
-                            </p>
+                {/* <SingleVendor vendorName={currentVendor && currentVendor.name} imageSrc={currentVendor && currentVendor.image_data} description={currentVendor && currentVendor.des} websiteLink={currentVendor && currentVendor.wlink}/> */}
 
-                        </Row>
-                        <Row>
-                            <a href={currentVendor && currentVendor.wlink} target='_blank'><Button variant="primary" className='websiteButton'>Visit Website</Button></a>
-                        </Row>
-
-                    </Modal.Body>
-                </Modal>
             </div>
         </section>
     );

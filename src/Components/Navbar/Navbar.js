@@ -198,7 +198,6 @@ function Navbar() {
           <Route path="/FAQs" element={<FAQs />} />
 
 
-
         </Routes>
 
       </Router>
