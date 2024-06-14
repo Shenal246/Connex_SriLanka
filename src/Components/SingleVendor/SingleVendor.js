@@ -1,36 +1,39 @@
 import React from 'react';
-import './SingleVendor.css';
+import { useLocation } from 'react-router-dom';
+import './SVendor.css';
 
-const SingleVendor = ({ vendorName, imageSrc, description, websiteLink }) => {
+const SingleVendor = () => {
+    const location = useLocation();
+    const { vend } = location.state;
+    
+
     return (
         <section>
             <div className="container sectionVendor">
-                {/* First Row */}
                 <div className='row'>
                     <div className='col-2 imgbgrd'>
-                        <img className='vendorpic1' src={imageSrc} alt={vendorName}></img>
+                        <img className='vendorpic1' src={`data:image/jpeg;base64,${vend.image_data}`} alt={vend.name}></img>
                     </div>
                     <div className='col-10'>
-                        <h1 className='vendorNameSingle'>{vendorName}</h1>
+                        {/* <h1 className='vendorNameSingle'>{vend.name}</h1> */}
                     </div>
                 </div>
 
-                {/* Second Row */}
                 <div className='row'>
                     <div className='col-1'></div>
                     <div className='col-10'>
                         <div className='contentVendor1'>
-                            {description}
+                            {vend.des}
                         </div>
                     </div>
                     <div className='col-1'></div>
                 </div>
 
-                {/* Third Row */}
                 <div className='row'>
-                    <div className='col-12 bton'>
-                        <a href={websiteLink} target='_blank' rel='noopener noreferrer'>
-                            <button className='websiteButton'>Visit Website</button>
+                    <div className='bton'>
+                        <a href={vend.wlink} target='_blank' rel='noopener noreferrer'>
+                            <button className='websiteButton'>More</button>
+                            <button className='websiteButton'>Inquiry</button>
                         </a>
                     </div>
                 </div>

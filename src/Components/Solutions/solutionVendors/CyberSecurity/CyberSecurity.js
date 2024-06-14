@@ -7,13 +7,15 @@ import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
 import { Row } from 'react-bootstrap';
 import connections from '../../../../config';
+import { useNavigate } from 'react-router-dom';
 
 function CyberSecurity() {
     const [vendors, setVendors] = useState([]);
     const [show, setShow] = useState(false);
     const [currentVendor, setCurrentVendor] = useState(null);
-
+    const navigate = useNavigate();
     const serverlink = connections.serverLink;
+    
 
     useEffect(() => {
         const values = {
@@ -31,8 +33,10 @@ function CyberSecurity() {
 
     }, []);
 
+   
+
     const handleCardClick = (vend) => {
-        setCurrentVendor(vend);
+        navigate(`/Solutions/CyberSecurity/${vend.name}`, { state: { vend } });
     };
 
     return (
@@ -50,7 +54,7 @@ function CyberSecurity() {
                     {vendors && vendors.map((vend, index) => (
                         <div className="col" key={index}>
 
-                            <div class="card h-100" onClick={() => { setShow(true); handleCardClick(vend); }}>
+                            <div class="card h-100" onClick={() => {  handleCardClick(vend); }}>
                                 {vend.image_data ? (
                                     <>
                                         <img

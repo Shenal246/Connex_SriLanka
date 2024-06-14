@@ -10,23 +10,26 @@
     padding: 10px;
 }
 .websiteButton {
-    width: 20% !important;
+    width: 10% !important;
     text-align: center;
     border-radius: 5px;  
-    background-color: rgb(153, 137, 255);
+    background-color: rgb(255, 255, 255);
+    margin: 5px;
+    border: none;
+    padding: 5px;
+    font-size: 18px;
 }
 
 .imgbgrd{
     background-color: aliceblue;
     border-radius: 5px;
-    
+    margin-left: 10px;
+    margin-top: 10px !important;
 }
 
 .bton{
     text-align: right;
     margin-bottom: 10px;
-   
-    
 }
 
 .imgcolmn{
@@ -51,8 +54,8 @@
     /* padding: 10px; */
     margin: 50px;
     border-radius: 10px;
-    border-color: rgb(17, 52, 105) !important;
-    border-width: 10px;
+    border: 2px solid  rgb(27, 81, 119) ;
+ 
 }
 
 .contentVendor1{
@@ -62,4 +65,5 @@
     padding-bottom: 50px;
     color: aliceblue;
     padding-top: 40px;
+    font-size: 20px;
 }
