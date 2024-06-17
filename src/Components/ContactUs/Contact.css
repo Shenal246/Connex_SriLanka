@@ -41,6 +41,11 @@
     .line {
         width: 350px;
     }
+
+    .txt1{
+        text-align: left;
+        margin-left: 120px;
+    }
 }
 
 .raw {
