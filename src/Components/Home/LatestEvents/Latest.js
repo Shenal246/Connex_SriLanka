@@ -4,8 +4,6 @@ import Card from 'react-bootstrap/Card';
 import { BsArrowRight } from 'react-icons/bs';
 import axios from "axios";
 import { NavLink } from "react-router-dom";
-
-import Latest1 from '../../../images/Latest/1.png';
 import { useState, useEffect, useRef } from 'react';
 import connections from '../../../config';
 
@@ -231,8 +229,7 @@ const Latest = () => {
                                 <div className="modal-body">
                                     {currentVideoLink && (
                                         <iframe
-                                            width="1100"
-                                            height="500"
+                                            className='iframenews'
                                             src={currentVideoLink && currentVideoLink}
                                             title="Video Player"
                                             frameBorder="0"

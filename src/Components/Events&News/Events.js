@@ -76,7 +76,7 @@ const Events = () => {
                                         <img
                                             src={`data:image/jpeg;base64,${news.image_data}`}
                                             alt={news.title}
-                                            className="card-img-top image rounded-top-5 opacity-75" style={{ width: '100%', height: 'auto' }}
+                                            className="card-img-top image rounded-top-5 opacity-75"
 
                                         />
                                     </>
@@ -108,9 +108,9 @@ const Events = () => {
                         <div className="modal-body">
                             {currentVideoLink && (
                                 <iframe
-                                    width="1100"
-                                    height="500"
-                                    src={currentVideoLink}
+                                    className='iframenews'
+                                 
+                                    src={currentVideoLink && currentVideoLink}
                                     title="Video Player"
                                     frameBorder="0"
                                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
