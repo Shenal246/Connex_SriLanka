@@ -144,3 +144,15 @@
     height: 100%;
     border: 0;
 }
+
+/* Custom height for 425px wide and 650px high viewports */
+@media (max-width: 760px)  {
+    .video-container {
+        padding-bottom: 70%; 
+    }
+
+    .iframenews{
+        height: 260px !important;
+    }
+  
+}

@@ -220,28 +220,31 @@ const Latest = () => {
                     </div>
 
                     {/* Modal */}
-                    <div className="modal fade" id="videoModal" tabIndex="-1" aria-labelledby="videoModalLabel" aria-hidden="true" onClick={handleCloseModal}>
-                        <div className="modal-dialog modal-dialog-centered modal-xl">
-                            <div className="modal-content modalClr">
-                                <div className="modal-header">
-                                    <button type="button" className="btn-close close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    {/* Modal */}
+            <div className="modal fade" id="videoModal" tabIndex="-1" aria-labelledby="videoModalLabel" aria-hidden="true" onClick={handleCloseModal}>
+                <div className="modal-dialog modal-dialog-centered modal-xl">
+                    <div className="modal-content modalClr">
+                        <div className="modal-header">
+                            <button type="button" className="btn-close close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div className="modal-body">
+                            {currentVideoLink && (
+                                <div className="video-container">
+                                    <iframe
+                                        className='iframenews'
+                                        src={currentVideoLink}
+                                        title="Video Player"
+                                        frameBorder="0"
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                        referrerPolicy="strict-origin-when-cross-origin"
+                                        allowFullScreen
+                                    ></iframe>
                                 </div>
-                                <div className="modal-body">
-                                    {currentVideoLink && (
-                                        <iframe
-                                            className='iframenews'
-                                            src={currentVideoLink && currentVideoLink}
-                                            title="Video Player"
-                                            frameBorder="0"
-                                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                            referrerPolicy="strict-origin-when-cross-origin"
-                                            allowFullScreen
-                                        ></iframe>
-                                    )}
-                                </div>
-                            </div>
+                            )}
                         </div>
                     </div>
+                </div>
+            </div>
 
                 </div>
             </div>
