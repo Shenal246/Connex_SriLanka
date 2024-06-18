@@ -35,9 +35,6 @@ const Events = () => {
             console.log(err);
         });
 
-        // console.log(newsData.image_data);
-
-        // For other news
         const values1 = {
             query: "SELECT title,link,type,status,image_data,cnt FROM news WHERE type=7 AND status=1 AND cnt=1;",
             key: "Cr6re8VRBm"
@@ -107,16 +104,17 @@ const Events = () => {
                         </div>
                         <div className="modal-body">
                             {currentVideoLink && (
-                                <iframe
-                                    className='iframenews'
-                                 
-                                    src={currentVideoLink && currentVideoLink}
-                                    title="Video Player"
-                                    frameBorder="0"
-                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                    referrerPolicy="strict-origin-when-cross-origin"
-                                    allowFullScreen
-                                ></iframe>
+                                <div className="video-container">
+                                    <iframe
+                                        className='iframenews'
+                                        src={currentVideoLink}
+                                        title="Video Player"
+                                        frameBorder="0"
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                        referrerPolicy="strict-origin-when-cross-origin"
+                                        allowFullScreen
+                                    ></iframe>
+                                </div>
                             )}
                         </div>
                     </div>
@@ -168,16 +166,17 @@ const Events = () => {
                         </div>
                         <div className="modal-body">
                             {currentVideoLink && (
-                                <iframe
-                                    width="1100"
-                                    height="500"
-                                    src={currentVideoLink}
-                                    title="Video Player"
-                                    frameBorder="0"
-                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                    referrerPolicy="strict-origin-when-cross-origin"
-                                    allowFullScreen
-                                ></iframe>
+                                <div className="video-container">
+                                    <iframe
+                                        className='iframenews'
+                                        src={currentVideoLink}
+                                        title="Video Player"
+                                        frameBorder="0"
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                        referrerPolicy="strict-origin-when-cross-origin"
+                                        allowFullScreen
+                                    ></iframe>
+                                </div>
                             )}
                         </div>
                     </div>
