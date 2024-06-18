@@ -166,7 +166,7 @@ const Events = () => {
                         </div>
                         <div className="modal-body">
                             {currentVideoLink && (
-                                <div className="video-co663ntainer">
+                                <div className="video-container">
                                     <iframe
                                         className='iframenews'
                                         src={currentVideoLink}
