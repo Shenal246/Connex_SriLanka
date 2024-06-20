@@ -4,7 +4,7 @@ import axios from 'axios';
 // import ReCAPTCHA from 'react-google-recaptcha';
 import './Contact.css';
 import mapSL from '../../images/map/mapSL.png';
-
+import Swal from 'sweetalert2'
 
 const Contact = () => {
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
@@ -38,7 +38,13 @@ const Contact = () => {
         try {
             const response = await axios.post("http://192.168.13.75:3001/insert", value33);
             if (response.status === 200) {
-                alert('Form submitted successfully!');
+                Swal.fire({
+                    // position: "top-end",
+                    icon: "success",
+                    title: "Successfully Submitted",
+                    showConfirmButton: false,
+                    timer: 1500
+                });
                 reset();
             } else {
                 alert('Failed to submit the form.');
