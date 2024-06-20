@@ -33,7 +33,7 @@ function InfrastructureMonitoring() {
     }, []);
 
     const handleCardClick = (vend) => {
-        navigate(`/Solutions/InfrastructureMonitoring/${vend.name}`, { state: { vend } });
+        navigate(`/SL/Solutions/InfrastructureMonitoring/${vend.name}`, { state: { vend } });
     };
     return (
         <section>

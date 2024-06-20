@@ -23,7 +23,7 @@ function Authentication() {
     }, [serverlink]);
 
     const handleCardClick = (vend) => {
-        navigate(`/Solutions/Authentication/${vend.name}`, { state: { vend } });
+        navigate(`/SL/Solutions/Authentication/${vend.name}`, { state: { vend } });
     };
 
     return (

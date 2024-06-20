@@ -33,7 +33,7 @@ function Endpoint() {
     }, []);
 
     const handleCardClick = (vend) => {
-        navigate(`/Solutions/Endpoin/${vend.name}`, { state: { vend } });
+        navigate(`/SL/Solutions/Endpoin/${vend.name}`, { state: { vend } });
     };
 
     return (

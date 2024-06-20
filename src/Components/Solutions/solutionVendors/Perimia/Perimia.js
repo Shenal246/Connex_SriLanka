@@ -32,7 +32,7 @@ function Perimia() {
     }, []);
 
     const handleCardClick = (vend) => {
-        navigate(`/Solutions/Perimia/${vend.name}`, { state: { vend } });
+        navigate(`/SL/Solutions/Perimia/${vend.name}`, { state: { vend } });
     };
 
     return (
