@@ -172,7 +172,7 @@ const Latest = () => {
                                             <div className="card-body cardBody2">
 
                                                 <div className="row">
-                                                    <h5 className="card-title">{latestThree && latestThree.title}</h5>
+                                                    <h5 className="card-title titelNameSmall">{latestThree && latestThree.title}</h5>
                                                 </div>
                                             </div>
                                         </div>
@@ -198,7 +198,7 @@ const Latest = () => {
                                             <div className="card-body cardBody2">
 
                                                 <div className="row">
-                                                    <h5 className="card-title">{latestFour && latestFour.title}</h5>
+                                                    <h5 className="card-title titelNameSmall">{latestFour && latestFour.title}</h5>
                                                 </div>
                                             </div>
                                         </div>
