@@ -5,10 +5,13 @@ import Botpic1 from '../../images/Chat/chat1.jpg';
 import Botpic2 from '../../images/Chat/chat2.jpg';
 import Botpic3 from '../../images/Chat/chat3.jpg';
 import axios from "axios";
+import connections from '../../config';
 
 function Chat() {
   const [responses, setResponses] = useState([]);
   const chatBotRef = useRef(null);
+
+  const serverlink = connections.serverLinkInsert;
 
   const handleEnd = async ({ values }) => {
     console.log(values);
@@ -27,7 +30,7 @@ function Chat() {
       key: "FKoaDwCi7C"
     };
 
-    await axios.post("http://192.168.13.75:3001/insert", value3)
+    await axios.post(serverlink, value3)
       .then((response) => {
         // Handle response if needed
       })

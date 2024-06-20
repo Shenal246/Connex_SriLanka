@@ -1,6 +1,5 @@
 import React from 'react';
 import './Endpoint.css';
-import ven1 from '../../../../images/vendorLogos/1.png';
 import { useState, useEffect } from 'react';
 import axios from "axios";
 import Modal from 'react-bootstrap/Modal';

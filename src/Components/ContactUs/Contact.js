@@ -4,13 +4,16 @@ import axios from 'axios';
 // import ReCAPTCHA from 'react-google-recaptcha';
 import './Contact.css';
 import mapSL from '../../images/map/mapSL.png';
-import Swal from 'sweetalert2'
+import Swal from 'sweetalert2';
+import connections from '../../config';
 
 const Contact = () => {
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
     const formRef = useRef();
     // const [isHuman, setIsHuman] = useState(false);
     // const recaptchaRef = useRef();
+
+    const serverlink = connections.serverLinkInsert;
 
     const onSubmit = async (data) => {
         // if (!isHuman) {
@@ -36,7 +39,7 @@ const Contact = () => {
         console.log(value33);
 
         try {
-            const response = await axios.post("http://192.168.13.75:3001/insert", value33);
+            const response = await axios.post(serverlink, value33);
             if (response.status === 200) {
                 Swal.fire({
                     // position: "top-end",
