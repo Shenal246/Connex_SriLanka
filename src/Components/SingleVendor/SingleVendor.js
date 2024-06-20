@@ -33,7 +33,7 @@ const SingleVendor = () => {
                     <div className='bton'>
                         <a href={vend.wlink} target='_blank' rel='noopener noreferrer'>
                             <button className='websiteButton'>More</button>
-                            <button className='websiteButton'>Inquiry</button>
+                            {/* <button className='websiteButton'>Inquiry</button> */}
                         </a>
                     </div>
                 </div>

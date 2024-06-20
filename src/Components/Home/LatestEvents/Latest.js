@@ -1,6 +1,5 @@
 import './Latest.css';
 import Button from 'react-bootstrap/Button';
-import Card from 'react-bootstrap/Card';
 import { BsArrowRight } from 'react-icons/bs';
 import axios from "axios";
 import { NavLink } from "react-router-dom";
@@ -60,19 +59,19 @@ const Latest = () => {
         };
 
         axios.post(serverlink, value3).then((response) => {
-            setLatestThree(response.data);
+            setLatestThree(response.data[0]);
         }).catch((err) => {
             console.log(err);
         });
 
-        // Latest One
+        // Latest Three
         const value4 = {
             query: "SELECT title,link,type,status,image_data,cnt FROM news WHERE type=6 AND status=1 AND cnt=1;",
             key: "Cr6re8VRBm"
         };
 
         axios.post(serverlink, value4).then((response) => {
-            setLatestFour(response.data);
+            setLatestFour(response.data[0]);
         }).catch((err) => {
             console.log(err);
         });
@@ -221,30 +220,30 @@ const Latest = () => {
 
                     {/* Modal */}
                     {/* Modal */}
-            <div className="modal fade" id="videoModal" tabIndex="-1" aria-labelledby="videoModalLabel" aria-hidden="true" onClick={handleCloseModal}>
-                <div className="modal-dialog modal-dialog-centered modal-xl">
-                    <div className="modal-content modalClr">
-                        <div className="modal-header">
-                            <button type="button" className="btn-close close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div className="modal-body">
-                            {currentVideoLink && (
-                                <div className="video-container">
-                                    <iframe
-                                        className='iframenews'
-                                        src={currentVideoLink}
-                                        title="Video Player"
-                                        frameBorder="0"
-                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                        referrerPolicy="strict-origin-when-cross-origin"
-                                        allowFullScreen
-                                    ></iframe>
+                    <div className="modal fade" id="videoModal" tabIndex="-1" aria-labelledby="videoModalLabel" aria-hidden="true" onClick={handleCloseModal}>
+                        <div className="modal-dialog modal-dialog-centered modal-xl">
+                            <div className="modal-content modalClr">
+                                <div className="modal-header">
+                                    <button type="button" className="btn-close close" data-bs-dismiss="modal" aria-label="Close"></button>
                                 </div>
-                            )}
+                                <div className="modal-body">
+                                    {currentVideoLink && (
+                                        <div className="video-container">
+                                            <iframe
+                                                className='iframenews'
+                                                src={currentVideoLink}
+                                                title="Video Player"
+                                                frameBorder="0"
+                                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                                referrerPolicy="strict-origin-when-cross-origin"
+                                                allowFullScreen
+                                            ></iframe>
+                                        </div>
+                                    )}
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </div>
 
                 </div>
             </div>
