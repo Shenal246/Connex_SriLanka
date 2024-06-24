@@ -92,6 +92,13 @@ function Microsoft() {
                             <dd>- Business Process Automationt </dd>
                         </dl>
                     </div>
+
+                    <div className='row'>
+                    <div className='bton'>
+                        <a href="https://www.microsoft.com/en-lk/" target='_blank' rel='noopener noreferrer' className='websiteButtonmic'>More</a>
+                        <a href="https://www.microsoft.com/en-lk/" target='_blank' rel='noopener noreferrer' className='websiteButtonmic'>Inquiry</a>
+                    </div>
+                </div>
                 </div>
             </div>
         </div>
