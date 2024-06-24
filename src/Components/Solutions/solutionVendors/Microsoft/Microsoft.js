@@ -33,7 +33,7 @@ function Microsoft() {
     }, []);
 
     const handleCardClick = (vend) => {
-        navigate(`/SL/Solutions/ServerBackup/${vend.name}`, { state: { vend } });
+        navigate(`/SL/Solutions/Microsoft/${vend.name}`, { state: { vend } });
     };
     return (
         <section className='heroSolution'>
@@ -41,7 +41,7 @@ function Microsoft() {
                 <div className='row '>
                     <div className="row text headingrow">
                         <div className="col-3" data-aos="fade-up" data-aos-delay="100"><hr /></div>
-                        <div className="col-6" data-aos="fade-up" data-aos-delay="100"><p id='topic'>Server Storage & Backup Solutions</p></div>
+                        <div className="col-6" data-aos="fade-up" data-aos-delay="100"><p id='topic'>Microsoft</p></div>
                         <div className="col-3" data-aos="fade-up" data-aos-delay="100"><hr /></div>
                     </div>
                 </div>

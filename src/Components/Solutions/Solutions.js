@@ -102,7 +102,7 @@ function Solutions() {
           <div className="col column">
             <NavLink to="/SL/Solutions/Server" activeClassName='active-link'>
               <div className="card crd ">
-                <img src={servers} className="card-img-top" alt="Server Storage & Backup Solutions" />
+                <img src={servers} className="card-img-top solImageHight" alt="Server Storage & Backup Solutions" />
                 <div className="card-body cardSize1">
                   <p className="card-text txts">Server Storage & Backup Solutions</p>
                 </div>
@@ -112,7 +112,7 @@ function Solutions() {
           <div className="col column">
             <NavLink to="/SL/Solutions/Microsoft" activeClassName='active-link'>
               <div className="card crd ">
-                <img src={mrcst} className="card-img-top" alt="Microsoft" />
+                <img src={mrcst} className="card-img-top solImageHight" alt="Microsoft" />
                 <div className="card-body cardSize1">
                   <p className="card-text txts">Microsoft</p>
                 </div>

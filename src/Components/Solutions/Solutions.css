@@ -160,8 +160,6 @@
 }
 
 
-
-
 @media  (min-width: 700px) {
   
   .rowmargin {
@@ -170,7 +168,12 @@
 }
 
 .heroSolution{
-  margin-bottom: 50px;
+  margin-bottom: 150px;
+}
+
+
+.solImageHight{
+  height: 265px !important;
 }
 
 
