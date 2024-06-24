@@ -36,7 +36,7 @@ function InfrastructureMonitoring() {
         navigate(`/SL/Solutions/InfrastructureMonitoring/${vend.name}`, { state: { vend } });
     };
     return (
-        <section>
+        <section className='heroSolution'>
             <div className="container">
                 <div className='row '>
                     <div className="row text headingrow">

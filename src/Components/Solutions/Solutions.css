@@ -15,7 +15,12 @@
 }
 
 .cardSize {
-  height: 100px;
+  height: 70px;
+  padding: 0% !important;
+}
+
+.cardSize1{
+  height: 60px;
 }
 
 .crd {
@@ -102,6 +107,15 @@
   font-size: 20px;
   font: bold;
   font-weight: 600;
+  padding: 0 !important;
+
+}
+
+.txts1{
+  font-size: 20px;
+  font: bold;
+  font-weight: 600;
+  padding: 0 !important;
 }
 
 
@@ -146,6 +160,18 @@
 }
 
 
+
+
+@media  (min-width: 700px) {
+  
+  .rowmargin {
+    margin-bottom: -110px;
+  }
+}
+
+.heroSolution{
+  margin-bottom: 50px;
+}
 
 
 

@@ -38,6 +38,7 @@ import tld from '../../images/FlagIcon/thailand.png';
 import Perimia from '../Solutions/solutionVendors/Perimia/Perimia';
 
 import products from '../Products/products';
+import Microsoft from '../Solutions/solutionVendors/Microsoft/Microsoft';
 
 function Navbar() {
 
@@ -185,6 +186,7 @@ function Navbar() {
           <Route path="/SL/Solutions/Networking" element={<Networking />} />
           <Route path="/SL/Solutions/Infrastructure" element={<Infrastructure />} />
           <Route path="/SL/Solutions/Server" element={<Server />} />
+          <Route path="/SL/Solutions/Microsoft" element={<Microsoft />} />
           <Route path="/SL/FAQs" element={<FAQs />} />
           <Route path="/SL/Solutions/Authentication/:vendorName" element={<SingleVendor />} />
           <Route path="/SL/Solutions/CyberSecurity/:vendorName" element={<SingleVendor />} />

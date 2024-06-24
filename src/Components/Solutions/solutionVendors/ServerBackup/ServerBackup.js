@@ -36,7 +36,7 @@ function Server() {
         navigate(`/SL/Solutions/ServerBackup/${vend.name}`, { state: { vend } });
     };
     return (
-        <section>
+        <section className='heroSolution'>
             <div className="container">
                 <div className='row '>
                     <div className="row text headingrow">

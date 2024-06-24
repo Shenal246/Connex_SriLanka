@@ -37,7 +37,7 @@ function Networking() {
         navigate(`/SL/Solutions/Networking/${vend.name}`, { state: { vend } });
     };
     return (
-        <section>
+        <section className='heroSolution'>
             <div className="container">
                 <div className='row '>
                     <div className="row text headingrow">

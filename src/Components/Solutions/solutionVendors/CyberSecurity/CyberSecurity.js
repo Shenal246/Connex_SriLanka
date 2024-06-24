@@ -40,7 +40,7 @@ function CyberSecurity() {
     };
 
     return (
-        <section>
+        <section className='heroSolution'>
             <div className="container">
                 <div className='row '>
                     <div className="row text headingrow">
