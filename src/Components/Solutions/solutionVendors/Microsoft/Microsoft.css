@@ -1,29 +1,43 @@
-.vendorTitel {
-    text-align: center;
+.miclogo{
+    width: 250px !important;
+    background-color: white;
+    border-radius: 10px;
 }
 
-.headingrow {
-    padding-top: 5%;
+.firstrow{
+    margin-top: 20px !important;
+    margin-bottom: 8px !important;
 }
 
-.modelHeader {
-    background-color: #01066B;
+.AuthText{
+    color: #00A3FF;
+    padding-top: 60px;
+}
+
+.descontainer{
+    background-color: rgba(190, 186, 186, 0.322);
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.micsectopic{
+    color: black;
+    background-color: white;
+    width: 160px;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.micsectopic3{
+    color: black;
+    background-color: white;
+    width: 235px;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.unlisted{
+    text-decoration: none;
     color: white;
-}
-
-.websiteButton {
-    width: 30% !important;
-}
-
-.btnBody {
-    text-align: center;
-}
-/* 
-.card-img-top {
-    padding: 10px !important;
-    width: 200px !important;
-} */
-
-.pdes {
-    text-align: justify;
 }
