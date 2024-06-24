@@ -21,7 +21,7 @@ function Solutions() {
             <div className="col-4" data-aos="fade-up" data-aos-delay="100"><hr /></div>
           </div>
         </div>
-        
+
         <div className="row row-cols-1 row-cols-lg-3 g-2 g-lg-3 rowmargin">
           <div className="col">
             <NavLink to="/SL/Solutions/Perimia" activeClassName='active-link'>
@@ -54,7 +54,7 @@ function Solutions() {
             </NavLink>
           </div>
         </div>
-        
+
         <div className="row row-cols-1 row-cols-lg-3 g-2 g-lg-3 rowmargin">
           <div className="col">
             <NavLink to="/SL/Solutions/SecurityManagement" activeClassName='active-link'>
@@ -87,18 +87,17 @@ function Solutions() {
             </NavLink>
           </div>
         </div>
-        
+
         <div className="row row-cols-1 row-cols-lg-3 g-2 g-lg-3 rowmargin">
-          <div className="col">
-            <NavLink to="/SL/Solutions/Infrastructure" activeClassName='active-link'>
-              <div className="card crd ">
-                <img src={endpoint} className="card-img-top " alt="Data Center Infrastructure and Infrastructure Monitoring" />
-                <div className="card-body cardSize1">
-                  <p className="card-text txts">Data Center Infrastructure and  Monitoring</p>
-                </div>
+          <NavLink to="/SL/Solutions/Infrastructure" activeClassName='active-link'>
+            <div className="card crd">
+              <img src={endpoint} className="card-img-top endpoint" alt="Data Center Infrastructure and Infrastructure Monitoring" />
+              <div className="card-body cardSize1">
+                <p className="card-text txts">Data Center Infrastructure and Monitoring</p>
               </div>
-            </NavLink>
-          </div>
+            </div>
+          </NavLink>
+
           <div className="col column">
             <NavLink to="/SL/Solutions/Server" activeClassName='active-link'>
               <div className="card crd ">
@@ -120,7 +119,7 @@ function Solutions() {
             </NavLink>
           </div>
         </div>
-        
+
       </div>
     </section>
   );
